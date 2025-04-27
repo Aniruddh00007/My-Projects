@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Plant Donation - Go Green</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fff4;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-image: url('green/bannner.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 50px;
+      margin: 0;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .quote {
+      text-align: center;
+      margin: 40px auto;
+      font-size: 24px;
+      font-style: italic;
+      max-width: 800px;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: darkgreen;
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      background-image: linear-gradient(-225deg, #231557 0%, #05000b 29%, #bdeb04 67%, #13f103 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .donate-cta {
+      background-image: url("green/forestback.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .donate-cta h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .donate-cta a button {
+      background-color: #4caf50;
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    .donate-cta a button:hover {
+      background-color: white;
+      color: #4caf50;
+      border: 2px solid #4caf50;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* === Leaf Fall Effect === */
+    .leaf {
+      position: fixed;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('green/Leaf.png'); /* leaf image path */
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: fall linear infinite;
+      z-index: 0;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+    /* For small devices (mobiles) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* For desktops */
+@media (min-width: 1025px) {
+  .container {
+    width: 70%;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Falling Leaves -->
+  <script>
+    function createLeaf() {
+      const leaf = document.createElement("div");
+      leaf.classList.add("leaf");
+      leaf.style.left = Math.random() * window.innerWidth + "px";
+      leaf.style.animationDuration = 5 + Math.random() * 5 + "s";
+      leaf.style.opacity = Math.random();
+      leaf.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+      document.body.appendChild(leaf);
+
+      setTimeout(() => {
+        leaf.remove();
+      }, 10000);
+    }
+
+    setInterval(createLeaf, 300); // More leaves = reduce interval
+  </script>
+
+  <header>
+    <h1>Plant a Tree, Grow a Future</h1>
+  </header>
+
+  <div class="quote">
+    “The one who plants trees, knowing that he will never sit in their shade, has at least started to understand the meaning of life.”
+  </div>
+
+  <div class="highlight">He Who Plants A Tree, Plants Hope.</div>
+
+  <div class="section">
+    <h2>Why Donate a Tree?</h2>
+    <img src="green/treedonate.jpg" alt="Donate Tree" />
+    <p>
+      Plants are the saviors of mankind. Not only do they provide the oxygen we breathe, but they also help purify the air, preserve biodiversity, and balance the ecosystem. 
+      By donating a tree, you take a step towards restoring nature and creating a greener future for generations to come.
+    </p>
+    <p>
+      🌱 <strong>Donate a Tree:</strong> Choose from our selection and donate online.<br>
+      🌿 <strong>We Plant It:</strong> Our team plants your tree in a suitable environment.<br>
+      🌳 <strong>We Nurture It:</strong> Regular care ensures your donation grows into a strong tree!
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Why is Tree Plantation Important?</h2>
+    <img src="green/plantimp.jfif" alt="Importance of Tree Plantation" />
+    <p>
+      While cities grow into concrete jungles, we are losing our connection with nature. Trees are not just "green decorations"—they are essential to our survival. 
+      They absorb carbon dioxide, reduce urban heat, prevent soil erosion, and support countless species.
+    </p>
+    <p>
+      Every tree planted is a step toward reversing climate change. Let us act before it's too late. Be a part of this noble movement with Go Green and contribute toward a cleaner, greener Earth.
+    </p>
+  </div>
+
+  <div class="donate-cta">
+    <h2>Join Our Green Mission!</h2>
+    <a href="donate_form.html">
+      <button>Donate a Tree Now</button>
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 Go Green. All rights reserved.
+  </footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">Left Side</div>
+      <div class="col-12 col-md-6">Right Side</div>
+    </div>
+  </div>
+  
+
+</body>
+</html>

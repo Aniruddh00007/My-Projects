@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plant Donation Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+
+      /* For small devices (mobiles) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* For desktops */
+@media (min-width: 1025px) {
+  .container {
+    width: 70%;
+  }
+}
+
+      html, body {
+      min-height: 100%;
+      background-image:url("green/green.jpg");
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      margin: 15px 0;
+      font-weight: 400;
+      color: green;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 3px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+     
+      box-shadow: 0 2px 5px #ccc; 
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(70% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 6px);
+ }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item:hover p, .item:hover i {
+      color: #0ee30b;
+      }
+      input:hover, select:hover, textarea:hover {
+      box-shadow: 0 0 5px 0 #1eea0b;
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: 2px solid black;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: green;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background-color: olivedrab;
+      color :white;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="Donate.jsp">
+        <h1><b>Plant Donation  Form</b></h1>
+        <div class="item">
+          <p>Donor  Name</p>
+          <input type="text" name="name" required/>
+        </div>
+        <div class="item">
+          <p>Donor  Address</p>
+          <input type="text" name="address" placeholder="Street address"required/>
+          <div class="city-item">
+            <input type="text" name="city" placeholder="City"required />
+           
+            <input type="text" name="zip" placeholder="Postal / Zip code" required/>
+            <select name="country"required >
+              <option  value="">Country</option>
+              <option value="Russia">Russia</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="India" selected>India</option>
+              <option value="USA">USA</option>
+              <option value="Armenis">Armenis</option>
+              <option value="Other">Others</option>
+            </select>
+          </div>
+        </div>
+        <div class="item">
+          <p>Plant species </p>
+          <div class="name-item">
+            <input type="text" name="plant" placeholder="Enter The Plants Details Which You want To donate." required/>
+          
+          </div>
+        </div>
+        <div class="item">
+          <p>Contact </p>
+          <input type="text" name="mobile"required/>
+        </div>
+        
+        </div>
+       
+        <div class="btn-block">
+          <button type="submit" href="/">SEND</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">Left Side</div>
+        <div class="col-12 col-md-6">Right Side</div>
+      </div>
+    </div>
+    
+  </body>
+</html>

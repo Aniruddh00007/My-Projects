@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Plant Adoption | GreenEarth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f5f9f1;
+      color: #2e3b2d;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: #2e7d32;
+      padding: 2rem;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+      animation: textclip 2s linear infinite;
+      background: linear-gradient(-225deg, #fff800, #ff1361, #44107a);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes textclip {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    .search-bar {
+      margin-top: 1rem;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+    }
+
+    .search-bar button {
+      background-color: white;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .search-bar img {
+      height: 24px;
+      vertical-align: middle;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .main-image {
+      float: right;
+      margin-left: 2rem;
+      border-radius: 10px;
+      width: 45%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2e7d32;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 12px 24px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #388e3c;
+    }
+
+    footer {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      color: #777;
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-image {
+        float: none;
+        width: 100%;
+        margin: 1rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>What are Plants and Adaptations?</h1>
+    <div class="search-bar">
+      <input type="search" placeholder="Search here..." />
+      <button><img src="green/search.png" alt="Search Icon" /></button>
+    </div>
+  </header>
+
+  <main>
+    <img src="green/tree-planting-hand-water-shovel_1medium.jpg" alt="Tree Planting" class="main-image">
+
+    <h2>Plants and Their Adaptations</h2>
+    <p>Plants have adaptations that help them survive and thrive in different environments. These special features explain why some plants grow in specific regions while others don’t.</p>
+
+    <p>During the pandemic, adopting plants has brought people peace and positivity. Taking care of a plant not only connects us with nature but also helps relieve anxiety and depression.</p>
+
+    <p>Indoor plants can reduce stress, boost productivity, and purify the air. NASA even recommends having one plant every 100 square feet to improve air quality. They remove up to 90% of air toxins in just 24 hours!</p>
+
+    <h2>How to Adopt a Plant:</h2>
+    <ul>
+      <li>Click the button below to choose a plant from our list.</li>
+      <li>Fill out the adoption form to start the process.</li>
+      <li>If you can’t find your desired plant, mention it in the form.</li>
+    </ul>
+
+    <a href="Aboutplant.html" class="btn">🌱 About Plants</a>
+  </main>
+
+  <footer>
+    &copy; 2025 GreenEarth | Designed by Aniruddh & Anjali 🌿
+  </footer>
+
+</body>
+</html>
