@@ -1,0 +1,175 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<title> Signup Form</title>
+<style>   
+html,body{
+    background-image:url("green/form background.jpg");
+    background-repeat: no-repeat;
+    
+   
+}
+/* For small devices (mobiles) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* For desktops */
+@media (min-width: 1025px) {
+  .container {
+    width: 70%;
+  }
+}
+
+input[type="text"] 
+	  {
+      margin-left:150;
+	  width:350px;
+	  padding: 7px;
+      border: 2px solid green;
+	  border-radius: 8px;
+	  }
+    input[type="Email"] 
+	  {
+      margin-left:150;
+	  width:350px;
+	  padding: 7px;
+      border: 2px solid green;
+	  border-radius: 8px;
+	  }
+      label{
+      margin-left:150 ;
+      font-size: 18;
+      }
+
+    
+    input[type=radio]{
+      margin-left:150;
+    }
+    .frm{
+       
+        margin-right: 500;
+        margin-left: 300;
+        
+    }
+    button{
+     
+     background-color: green;
+   color: white;
+   font-size:18px;
+   padding: 15px 0;
+   margin: 20px 0;
+   border: yes;
+   border-radius:15px;
+   cursor: grabbing;
+   width: 400px;
+   margin-left: 150px;
+   
+   }
+     button:hover {
+   opacity: 0.8;
+   }
+  
+   .lineUp {
+  animation: 2s anim-lineUp ease-out infinite;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.hdr{
+       
+            
+    
+         color:yellowgreen;   
+          
+          
+              }	
+</style>
+</head>
+<body>
+<form action="orderform.jsp">
+<br>
+<header class="hdr">
+    <h1 class="h1" >  </h1>
+    <div class="line">
+        <h1 class='lineUp'><center><b>Order Form</h1>
+      </div>
+
+  </header>
+
+<div class="frm">
+
+
+
+
+</hr>
+<label> <Strong>    Name </Strong>   </label> <br>
+    <input type = "text" placeholder="Enter Name" name= "name" required/> <br> <br>
+    
+    <label> <Strong>    Mobile Number </Strong>   </label> <br>
+    <input type = "text" placeholder="Enter MObile number" name= "phone" required/><br> <br>   
+    
+    <label> <Strong>   Email </Strong>   </label> <br>
+    <input type = "email" placeholder="Enter Mail ID" name= "mail" required/><br> <br>
+
+    <label> <Strong>   Address </Strong>   </label> <br>
+    <input type = "text" placeholder="Enter Your Address" name= "address" required/><br> <br> 
+    
+   
+    <label> <Strong> Herbs & Plants Name </Strong>   </label> <br>
+    <input type = "text" placeholder="Enter Plants name" name= "plant" required/><br> <br> 
+   
+
+    <label> <Strong>  Payment</Strong>   </label> 
+</label><br>  
+<input type="radio" name="payment"value="Credit Card"/> Credit card <br>  
+<input type="radio" name="payment"value="Debit Card"/> Debit Card <br>  
+<input type="radio" name="payment" value="UPI"/> UPI <br>
+<input type="radio" name="payment" value="COD"/> Cash on Delivery <br> 
+<br>  
+
+<Button value="submit">Placed Order </Button>
+
+
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">Left Side</div>
+    <div class="col-12 col-md-6">Right Side</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

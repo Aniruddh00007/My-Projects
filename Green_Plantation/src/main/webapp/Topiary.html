@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topiary Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: whitesmoke;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .hdr {
+            border: 2px solid black;
+            padding: 60px 20px;
+            color: aliceblue;
+            background-image: url("green/top.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 2px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .lineUp {
+            animation: 2s anim-lineUp ease-out infinite;
+        }
+
+        @keyframes anim-lineUp {
+            0% { opacity: 0; transform: translateY(80%); }
+            20% { opacity: 0; }
+            50% { opacity: 1; transform: translateY(0%); }
+            100% { opacity: 1; transform: translateY(0%); }
+        }
+
+        .textanimation {
+            margin: 20px auto;
+            text-align: center;
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg, #231557 0%, #05000b 29%, #bdeb04 67%, #13f103 100%);
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: block;
+            font-size: 28px;
+        }
+
+        @keyframes textclip {
+            to { background-position: 200% center; }
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 10px;
+            font-size: 22px;
+        }
+
+        .istp, .mai, .par {
+            margin: 20px auto;
+            max-width: 1000px;
+            padding: 15px;
+            font-size: 18px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .mainh {
+            text-align: center;
+            margin: 40px 10px 20px 10px;
+            font-size: 36px;
+        }
+
+        .main {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;
+            height: auto;
+            border: 4px solid grey;
+            border-radius: 8px;
+        }
+
+        .cont {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .cont:hover {
+            border: 2px solid olivedrab;
+            transform: scale(1.05);
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            font-size: 18px;
+            padding: 12px 25px;
+            margin: 30px auto;
+            display: block;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        hr {
+            margin: 40px auto;
+            width: 80%;
+        }
+
+        /* Responsive Text Sizes */
+        @media (max-width: 768px) {
+            .hdr {
+                font-size: 20px;
+                padding: 40px 10px;
+            }
+
+            .textanimation {
+                font-size: 22px;
+                margin: 15px 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .mainh {
+                font-size: 28px;
+            }
+
+            .istp, .mai, .par {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hdr {
+                font-size: 18px;
+                padding: 30px 5px;
+            }
+
+            .textanimation {
+                font-size: 18px;
+            }
+
+            .mainh {
+                font-size: 24px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="hdr">
+        <h1 class="lineUp">Plant Topiary Services</h1>
+    </header>
+
+    <main>
+        <h1 class="textanimation">Topiary, the training of living trees and shrubs into decorative shapes</h1>
+
+        <h2><i>Topiary has given our gardens a sense of structure for centuries.</i></h2>
+
+        <p class="istp">
+            Topiary is the horticultural practice of training perennial plants by clipping the foliage and twigs to form clearly defined shapes.
+        </p>
+
+        <h1 class="mainh">Best Plants for Topiary</h1>
+        <p class="mai">The best plants for topiary that will add year-round structure, form, and contrast to your garden scheme.</p>
+        
+        <img class="main" src="green/topiaryy.jpg" alt="Topiary Plants">
+
+        <p class="par">
+            The best plants for topiary include evergreens and semi-evergreens that are hardy, easy to clip, and dense enough to create a smooth form.
+        </p>
+
+        <h1 class="mainh">Best Plants For Topiary</h1>
+
+        <p class="par">
+            Beyond the usual green box, yew and privet, you can shape a wide array of evergreen shrubs and trees into beautiful garden sculptures.
+        </p>
+
+        <!-- Plant Sections -->
+
+        <h1 class="mainh">1. Buxus Sempervirens – Box</h1>
+        <img class="cont" src="green/buxus.png" alt="Buxus">
+        <p class="par">Small leaves and dense texture make box the classic choice for topiary designs.</p>
+
+        <h1 class="mainh">2. Ligustrum Delavayanum – Delavay Privet</h1>
+        <img class="cont" src="green/ligustrum.jpg" alt="Ligustrum">
+        <p class="par">This hardy evergreen is not susceptible to pests and diseases, ideal for formal gardens.</p>
+
+        <h1 class="mainh">3. Ilex – Holly</h1>
+        <img class="cont" src="green/llex.jpg" alt="Ilex">
+        <p class="par">Glossy leaves and berries make English holly a decorative option for garden sculptures.</p>
+
+        <h1 class="mainh">4. Pittosporum</h1>
+        <img class="cont" src="green/pittos.jpg" alt="Pittosporum">
+        <p class="par">Neat evergreen shrubs that prefer a sheltered, sunny position for better shaping.</p>
+
+        <h1 class="mainh">5. Photinia</h1>
+        <img class="cont" src="green/photania.jpg" alt="Photinia">
+        <p class="par">Photinia shrubs are great for privacy hedges and formal garden outlines.</p>
+
+        <h1 class="mainh">6. Euonymus ‘Emerald N Gold’</h1>
+        <img class="cont" src="green/Golden.jpg" alt="Euonymus">
+        <p class="par">A slow-growing compact evergreen shrub suitable for detailed topiary work.</p>
+
+        <h1 class="mainh">7. Camellia</h1>
+        <img class="cont" src="green/camelia.jpg" alt="Camellia">
+        <p class="par">Excellent shrubs for shaded areas, camellias offer beautiful flowers and evergreen leaves.</p>
+
+        <h1 class="mainh">8. Laurus Nobilis – Bay</h1>
+        <img class="cont" src="green/laurus.jpg" alt="Bay Tree">
+        <p class="par">Architectural narrow leaves make bay trees popular for topiary and container gardening.</p>
+
+        <h1 class="mainh">9. Trachelospermum Jasminoides – Star Jasmine</h1>
+        <img class="cont" src="green/jasmin.jpg" alt="Star Jasmine">
+        <p class="par">A vigorous fast-growing flowering vine, ideal for quick topiary frames.</p>
+
+        <hr>
+
+        <p style="text-align: center;">Send mail to get this service...</p>
+
+        <a href="Adminmail.jsp">
+            <button type="button">Send Message</button>
+        </a>
+    </main>
+</body>
+</html>

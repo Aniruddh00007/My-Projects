@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayurvedic Plants</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f9f0;
+      color: #333;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+    
+body.loaded {
+    opacity: 1;
+  }
+    header {
+      background-color: #2e7d32;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: fadeSlide 2s ease-in-out;
+    }
+
+    header h1 {
+      animation: glowText 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 5px #81c784, 0 0 10px #66bb6a; }
+      to { text-shadow: 0 0 15px #c8e6c9, 0 0 20px #81c784; }
+    }
+
+    nav {
+      background-color: #a5d6a7;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2e7d32;
+      font-weight: bold;
+      padding: 8px 16px;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background-color: #2e7d32;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      background-color: #c8e6c9;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 40px;
+      border-bottom: 1px solid #ccc;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    section:nth-child(even) {
+      background-color: #e8f5e9;
+    }
+
+    h2 {
+      color: #1b5e20;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .plant-img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease;
+    }
+
+    .plant-img:hover {
+      transform: scale(1.1);
+    }
+
+    .plant-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .plant-text {
+      max-width: 600px;
+    }
+
+    .contact-section {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .contact-button {
+      background-color: #2e7d32;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .contact-button:hover {
+      background-color: #1b5e20;
+    }
+    html {
+        scroll-behavior: smooth;
+      }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ayurvedic Plants & Their Benefits</h1>
+  </header>
+
+  <nav>
+    <a href="#neem">Neem</a>
+    <a href="#tulsi">Tulsi</a>
+    <a href="#aloevera">Aloevera</a>
+    <a href="#baheda">Terminalia bellirica</a>
+    <a href="#asparagus">Asparagus</a>
+    <a href="#brahmi">Brahmi</a>
+    <a href="#shatavari">Shatavari</a>
+    <a href="#shankhpushpi">Shankhpushpi</a>
+    <a href="#bhringraj">Bhringraj</a>
+    <a href="#guggul">Guggul</a>
+  </nav>
+  <section id="neem">
+    <div class="plant-container">
+      <img src="img/Neem.jpg" alt="Neem" class="plant-img">
+      <div class="plant-text">
+        <h2>Neem</h2>
+        <p><strong>Scientific Name:</strong> Azadirachta indica</p>
+        <p><strong>Benefits:</strong> Antibacterial, antifungal, blood purifier, treats skin disorders.
+            Neem is widely known for its antibacterial, antifungal, antiviral, 
+            and anti-inflammatory properties. It's often referred to as the "Village Pharmacy"
+             in India due to its wide range of medicinal uses. 🌿</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tulsi">
+    <div class="plant-container">
+      <img src="img/Basil.jpg" alt="Tulsi" class="plant-img">
+      <div class="plant-text">
+        <h2>Tulsi</h2>
+        <p><strong>Scientific Name:</strong> Ocimum tenuiflorum</p>
+        <p><strong>Benefits:</strong> Boosts immunity, relieves stress, treats cold and flu.
+            Tulsi is revered in Ayurveda for its powerful adaptogenic, antimicrobial, and anti-inflammatory properties. It's often used in herbal teas, 
+            medicines, and even spiritual rituals for its health and purifying effects. 🌱
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="aloevera">
+    <div class="plant-container">
+      <img src="img/AloeVera.jpg" alt="AloeVera" class="plant-img">
+      <div class="plant-text">
+        <h2>Aloevera</h2>
+        <p><strong>Scientific Name:</strong> Aloe barbadensis miller</p>
+        <p><strong>Benefits:</strong> Reduces anxiety, boosts energy, improves concentration.
+            Aloe Vera is widely known for its soothing, healing, and moisturizing properties, 
+            especially for skin and digestive health.
+             It's a staple in Ayurveda and natural skincare!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="baheda">
+    <div class="plant-container">
+      <img src="img/bahera.jpg" alt="bahera" class="plant-img">
+      <div class="plant-text">
+        <h2>Baheda</h2>
+        <p><strong>Scientific Name:</strong> Terminalia bellirica</p>
+        <p><strong>Benefits:</strong>Aids digestion, improves skin, promotes weight loss. Terminalia bellirica supports digestion, respiratory health,
+             and immunity with its antioxidant-rich properties. It also aids in detoxification, 
+            blood sugar regulation, and brain function..</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="asparagus">
+    <div class="plant-container">
+      <img src="img/asparagus.jpg" alt="Asparagaus" class="plant-img">
+      <div class="plant-text">
+        <h2>Shatavari </h2>
+        <p><strong>Scientific Name:</strong> Asparagus officinalis.</p>
+        <p><strong>Benefits:</strong> Asparagus officinalis is rich in antioxidants and helps detoxify the body.
+             It supports digestive health and acts as a natural diuretic.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="brahmi">
+    <div class="plant-container">
+      <img src="img/Brahmi.jpg" alt="Brahmi" class="plant-img">
+      <div class="plant-text">
+        <h2>Brahmi</h2>
+        <p><strong>Scientific Name:</strong> Bacopa monnieri</p>
+        <p><strong>Benefits:</strong> Supports female health, improves digestion, boosts immunity.
+             Enhances memory, reduces stress, supports brain health.
+            Brahmi enhances memory, concentration, and reduces anxiety and stress levels.
+            It also supports brain health and may help in managing symptoms of Alzheimer's.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="shatavari">
+    <div class="plant-container">
+      <img src="img/Ashwagandha.jpg" alt="Shatavari" class="plant-img">
+      <div class="plant-text">
+        <h2>Ashwagandha </h2>
+        <p><strong>Scientific Name:</strong> Withania somnifera.</p>
+        <p><strong>Benefits:</strong> Ashwagandha helps reduce stress and anxiety by lowering cortisol levels.
+            It enhances strength, stamina, and supports better sleep.
+            It also boosts brain function, immunity, and overall energy levels naturally..</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="shankhpushpi">
+    <div class="plant-container">
+      <img src="img/shankhpushpi.webp" alt="Haritaki" class="plant-img">
+      <div class="plant-text">
+        <h2>Shankhpushpi</h2>
+        <p><strong>Scientific Name:</strong>Convolvulus pluricaulis</p>
+        <p><strong>Benefits:</strong> Shankhpushpi is known for boosting memory, intelligence, and cognitive function.
+            It also helps reduce stress, mental fatigue, and promotes restful sleep.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bhringraj">
+    <div class="plant-container">
+      <img src="img/bhringraj.webp" alt="Bhringraj" class="plant-img">
+      <div class="plant-text">
+        <h2>Bhringraj</h2>
+        <p><strong>Scientific Name:</strong> Eclipta alba</p>
+        <p><strong>Benefits:</strong> Improves hair health, treats liver disorders, reduces inflammation.
+            Bhringraj helps promote hair growth, reduces hair fall, and prevents premature greying.
+            It also supports liver health, improves skin complexion, and enhances memory and mood.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="guggul">
+    <div class="plant-container">
+      <img src="img/Guggul.jpg" alt="Guggul" class="plant-img">
+      <div class="plant-text">
+        <h2>Guggul</h2>
+        <p><strong>Scientific Name:</strong> Commiphora wightii</p>
+        <p><strong>Benefits:</strong> Lowers cholesterol, reduces arthritis pain, improves metabolism.
+            Guggul helps lower cholesterol levels, supports weight management, and improves thyroid function.
+            It also has anti-inflammatory properties that aid in joint pain and arthritis relief.
+            
+        </p>
+      </div>
+    </div>
+  </section>
+ 
+  <div class="contact-section">
+    <h5>"Can’t find your herb? Let us know – we’re happy to help!"</h5>
+    <a href="Form.html" class="contact-button">Order</a>
+  </div>
+
+
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/language/java/Advance Java/MySql- x64/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="E:/language/java/Advance Java/MySql- x64/servlet-api-6.0.37.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

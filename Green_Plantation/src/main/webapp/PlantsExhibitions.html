@@ -1,0 +1,234 @@
+<html>
+    <heaad>
+        <title>Plants Exhibitions Page </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <style>
+           .hdr{
+       
+       border: 2px solid black; 
+        padding: 80px;
+         color:aliceblue;   
+           background-image:url("green/leaves.jpg");
+           border: 2px solid black;
+           border-radius: 2px;
+           font-size: 30;
+   }
+   
+
+    .wrapper.two {
+   
+    font-size: 3rem;
+    font-family: "Play", sans-serif;
+}
+.neon h3 {
+    margin: 1rem auto;
+    animation: neon 1s ease infinite;
+}
+@keyframes neon {
+    0%,
+    100% {
+        text-shadow: 0 0 10px #7cfc00, 0 0 20px #7cfc00, 0 0 20px #7cfc00, 0 0 20px #7cfc00, 0 0 2px #fed128, 2px 2px 2px #806914;
+        color: #f5efcb;
+    }
+    50% {
+        text-shadow: 0 0 2px #568203, 0 0 5px #568203, 0 0 5px #568203, 0 0 5px #568203, 0 0 2px #568203, 4px 4px 2px #40340a;
+        color: #7cfc00;
+    }
+     .first{
+
+      font: size 16;
+    }
+}
+
+   .man{
+      margin-top: 55;
+    float: left;
+    border:2px solid black;
+    border-radius: 3px;
+   }
+   .blockq{
+       padding: 22;
+       margin-top: 100;
+       border-style: outset;
+       float: right;
+       font-size: 16;
+
+
+   }
+   button{
+
+    background-color: green;
+      color: white;
+      font-size: 18;
+      color: "white";
+      border-radius:15px;
+      margin-left: 200;
+      padding: 12px 0;
+      width: 200px;
+   }
+   button:hover {
+      opacity: 0.8;
+      }
+   .container {
+    padding: 50;
+    margin-left: 10;
+    display:flex;
+    justify-content: space-between;
+   }
+
+.uu{
+    margin-left: 20;
+    font-size: 18; 
+}
+.cont{
+
+margin-top: 400;
+
+display:flex
+
+}
+.image-wrapper {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  margin: 30vh auto;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: -250.5;
+  left: 0;
+  transform-origin: left;
+}
+
+.image-1 {
+  clip-path: polygon(0 0, 0 32%, 28% 0);
+  transform: translate(-10px, -10px);
+  transition: transform 300ms ease;
+  transform-origin: top;
+  .image-wrapper:hover & {
+    transform: translate(0,0);
+  }
+}
+
+.image-2 {
+  clip-path: polygon(28% 0, 0 32%, 0 100%, 17% 100%, 90% 0);
+  transform: translate(-30px, 5px);
+  transition: transform 300ms ease;
+  .image-wrapper:hover & {
+    transform: translate(0,0);
+  }
+}
+
+.image-3 {
+  clip-path: polygon(100% 0, 100% 65%, 74% 100%, 17% 100%, 90% 0);
+  transform: translate(-15px, -10px);
+  transition: transform 300ms ease;
+  .image-wrapper:hover & {
+    transform: translate(0,0);
+  }
+}
+
+.image-4 {
+  clip-path: polygon(100% 65%, 74% 100%, 100% 100%);
+  transform: translate(-32px, 5px);
+  transition: transform 300ms ease;
+  transform-origin: top;
+  .image-wrapper:hover & {
+    transform: translate(0,0);
+  }
+}
+/* For small devices (mobiles) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* For desktops */
+@media (min-width: 1025px) {
+  .container {
+    width: 70%;
+  }
+}
+
+
+
+
+           
+           
+           </style>
+           </heaad>
+   
+           <header class="hdr">
+            <div class="wrapper two">
+                <div class="neon">
+                    <h3><center>Plants Exhibitions Services </h3>
+                </div>
+            </div>
+           
+
+            </header>        
+            <body>
+                
+                <p class="uu">Life on earth depends on plants, without them mankind would cease to exist. This exhibition aims to help us appreciate the plant world and how important it is for us all to care for it.
+                   <br>
+                    Commercial exhibitions, generally called trade fairs, trade shows or expos, are usually organized so that organizations in a specific interest or industry can showcase and demonstrate their latest products, service, study activities of rivals and examine recent trends and opportunities. 
+                <div>
+                </p>
+ 
+                <img class="man"src="green\Plants-Exhibition-Services.jpg"height="500"width="900"/> <br>
+                <blockquote class="blockq"> " We have exclusive collection of rare plants,which we offer for plant<br>  exhibitions and flower shows, please contact us for such requirements.
+                            "
+                </blockquote><br>
+               
+               
+                <a href="Adminmail.jsp"><button  type="submit" formaction="Adminmail.jsp"> Send Message</button></a>
+                </div> <br>
+
+               
+               <div class="cont">
+                 <div class="image-wrapper">
+                    <img class="image-1" src="green\Trendy-Terrariums.jpg"height="250"width="370" />
+                    <img class="image-2" src="green\Trendy-Terrariums.jpg"height="250"width="370" />
+                    <img class="image-3" src="green\Trendy-Terrariums.jpg"height="250"width="370" />
+                    <img class="image-4" src="green\Trendy-Terrariums.jpg"height="250"width="370" />
+                  </div>
+                  <div class="image-wrapper">
+                    <img class="image-1" src="green\FRP-Planters-Sample.jpg"height="250"width="370"" />
+                    <img class="image-2" src="green\FRP-Planters-Sample.jpg"height="250"width="370"" />
+                    <img class="image-3" src="green\FRP-Planters-Sample.jpg"height="250"width="370"" />
+                    <img class="image-4" src="green\FRP-Planters-Sample.jpg"height="250"width="370"" />
+                  </div>
+
+                  <div class="image-wrapper">
+                    <img class="image-1" src="green\Metal-Planters.jpg"height="250"width="370" />
+                    <img class="image-2" src="green\Metal-Planters.jpg"height="250"width="370" />
+                    <img class="image-3" src="green\Metal-Planters.jpg"height="250"width="370" />
+                    <img class="image-4" src="green\Metal-Planters.jpg"height="250"width="370" />
+                  </div>
+
+                  <div class="image-wrapper">
+                    <img class="image-1" src="green\Miniatures.jpg"height="250"width="370" />
+                    <img class="image-2" src="green\Miniatures.jpg"height="250"width="370" />
+                    <img class="image-3" src="green\Miniatures.jpg"height="250"width="370" />
+                    <img class="image-4" src="green\Miniatures.jpg"height="250"width="370" />
+                  </div>
+
+                </div>
+                
+        </body>
+        </html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Successful</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .container img {
+            width: 100px;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        h1 {
+            color: green;
+            margin-bottom: 10px;
+        }
+
+        .order-details {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .order-details p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background-color: olivedrab;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkolivegreen;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px 10px;
+                padding: 15px;
+            }
+            .order-details p {
+                font-size: 14px;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Go Green Plantation</h1>
+        <h2>Order Placed Successfully!</h2>
+
+        <img src="green/green Check.jpg" alt="Success">
+
+        <div class="order-details">
+            <p><strong>Order Number:</strong> </p>
+            <p><strong>Order Items:</strong> </p>
+            <p><strong>Amount:</strong> </p>
+            <p><strong>Payment Method:</strong> </p>
+        </div>
+
+        <hr>
+
+        <div class="buttons">
+            <a href="index.html"><button>Home</button></a>
+            <button onclick="window.print()">Print</button>
+        </div>
+    </div>
+
+</body>
+</html>

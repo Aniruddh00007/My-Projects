@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tree Information - GreenEarth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to right, #dfe9d3, #f9f5e5);
+      font-family: 'Quicksand', sans-serif;
+      color: #2e3b2d;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #0a4c01;
+      color: white;
+      text-shadow: 2px 2px 6px #00000066;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #abff02; }
+      to { text-shadow: 0 0 20px #00ff00, 0 0 30px #66ff66; }
+    }
+
+    .tree-section {
+      padding: 3rem 5rem;
+    }
+
+    .tree-card {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 3rem;
+      background: #b6e565;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .tree-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .tree-image {
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .tree-image img {
+      width: 350px;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .tree-image img:hover {
+      transform: scale(1.1);
+    }
+
+    .tree-details {
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .tree-details h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tree-details p {
+      margin-bottom: 0.5rem;
+    }
+
+    .tree-details ul {
+      margin-top: 0.8rem;
+      padding-left: 1.5rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-btn {
+      display: block;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background-color: #0a4c01;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .contact-btn:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    .contact-link {
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      background: #0a4c01;
+      color: white;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* ---------------------- RESPONSIVE PART ------------------------ */
+    @media (max-width: 1024px) {
+      .tree-section {
+        padding: 2rem 3rem;
+      }
+
+      .tree-card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tree-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .tree-details {
+        padding: 1.5rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .tree-section {
+        padding: 1.5rem;
+      }
+
+      .tree-details h2 {
+        font-size: 1.5rem;
+      }
+
+      .tree-details p, .tree-details ul {
+        font-size: 0.95rem;
+      }
+
+      .contact-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+
+      footer {
+        font-size: 0.8rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌳 Trees & Their Benefits</h1>
+  </header>
+
+  <div class="tree-section">
+
+    <!-- Oak Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="green/oak.jpg" alt="Oak Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Oak Tree</h2>
+        <p><strong>Planting Season:</strong> Early Spring</p>
+        <p><strong>Growth Time:</strong> 20–30 years</p>
+        <ul>
+          <li>Supports wildlife</li>
+          <li>Prevents erosion</li>
+          <li>Hardwood used in furniture</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Durable, long-lasting</p>
+      </div>
+    </div>
+
+    <!-- Maple Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/rapple.jpg" alt="Maple Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Maple Tree</h2>
+        <p><strong>Planting Season:</strong> Fall</p>
+        <p><strong>Growth Time:</strong> 10–20 years</p>
+        <ul>
+          <li>Beautiful fall foliage</li>
+          <li>Maple syrup from sap</li>
+          <li>Shade and air purification</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Great for flooring and cabinets</p>
+      </div>
+    </div>
+
+    <!-- Banyan Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/BAnyan Tree.jpeg" alt="Banyan Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Banyan Tree</h2>
+        <p><strong>Planting Season:</strong> Monsoon</p>
+        <p><strong>Growth Time:</strong> 15–20 years</p>
+        <ul>
+          <li>Provides dense shade</li>
+          <li>Sacred and cultural value</li>
+          <li>Improves soil fertility</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Softwood, used for matchsticks</p>
+      </div>
+    </div>
+
+    <!-- Neem Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/neem tree.jpg" alt="Neem Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Neem Tree</h2>
+        <p><strong>Planting Season:</strong> Summer</p>
+        <p><strong>Growth Time:</strong> 3–5 years</p>
+        <ul>
+          <li>Medicinal uses</li>
+          <li>Repels insects</li>
+          <li>Air purifier</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Pest-resistant, good for furniture</p>
+      </div>
+    </div>
+
+    <!-- Bamboo -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/Bamboo.jpg" alt="Bamboo">
+      </div>
+      <div class="tree-details">
+        <h2>Bamboo</h2>
+        <p><strong>Planting Season:</strong> Spring</p>
+        <p><strong>Growth Time:</strong> 3–5 years</p>
+        <ul>
+          <li>Fast growing</li>
+          <li>Prevents soil erosion</li>
+          <li>Used in construction</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Strong, lightweight, eco-friendly</p>
+      </div>
+    </div>
+
+    <!-- Teak Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/teak.jpg" alt="Teak Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Teak Tree</h2>
+        <p><strong>Planting Season:</strong> June–July</p>
+        <p><strong>Growth Time:</strong> 20–25 years</p>
+        <ul>
+          <li>Premium hardwood</li>
+          <li>Water resistant</li>
+          <li>High resale value</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Best for furniture, ships</p>
+      </div>
+    </div>
+
+    <!-- Eucalyptus Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/Eucalyptus.webp" alt="Eucalyptus Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Eucalyptus Tree</h2>
+        <p><strong>Planting Season:</strong> Spring</p>
+        <p><strong>Growth Time:</strong> 5–10 years</p>
+        <ul>
+          <li>Medicinal oil</li>
+          <li>Fragrant and pest repellent</li>
+          <li>Quick growing</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Firewood, paper industry</p>
+      </div>
+    </div>
+
+    <!-- Pine Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/pine.jpg" alt="Pine Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Pine Tree</h2>
+        <p><strong>Planting Season:</strong> Fall</p>
+        <p><strong>Growth Time:</strong> 25–30 years</p>
+        <ul>
+          <li>Evergreen shade</li>
+          <li>Fragrance and resin</li>
+          <li>Windbreak</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Construction, decorative items</p>
+      </div>
+    </div>
+
+    <!-- Mahogany Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/Mahogany.jpg" alt="Mahogany Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Mahogany Tree</h2>
+        <p><strong>Planting Season:</strong> Summer</p>
+        <p><strong>Growth Time:</strong> 15–25 years</p>
+        <ul>
+          <li>Rich reddish wood</li>
+          <li>Luxury furniture</li>
+          <li>High market value</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Elegant and rot-resistant</p>
+      </div>
+    </div>
+
+    <!-- Mango Tree -->
+    <div class="tree-card">
+      <div class="tree-image">
+        <img src="img/Mango tree.jpg" alt="Mango Tree">
+      </div>
+      <div class="tree-details">
+        <h2>Mango Tree</h2>
+        <p><strong>Planting Season:</strong> Early Summer</p>
+        <p><strong>Growth Time:</strong> 5–8 years</p>
+        <ul>
+          <li>Fruits for consumption</li>
+          <li>Shade provider</li>
+          <li>Medicinal leaves</li>
+        </ul>
+        <p><strong>Wood Benefits:</strong> Softwood, used in plywood & packaging</p>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="Adminmail.jsp" class="contact-link">
+    <button class="contact-btn">📩 Contact Us</button>
+  </a>
+
+  <footer>
+    &copy; 2025 GreenEarth | Designed by Aniruddh & Anjali 🌿
+  </footer>
+
+</body>
+</html>

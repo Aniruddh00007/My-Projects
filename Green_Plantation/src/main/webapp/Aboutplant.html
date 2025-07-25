@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantation & Ayurveda</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+      }
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero {
+            background: url('img/Hero.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+           
+        }
+        
+        .plant-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .card-img-top {
+            width: 100%;  
+            height: 250px; 
+            object-fit: cover; 
+            display: block;
+        }
+        .plant-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            border-radius: 20px;
+        }
+        .btn-custom:hover {
+            background-color: #218838;
+        }
+
+        /* Footer Styles */
+        .footer {
+          background-color: #28a745;
+          color: white;
+          text-align: center;
+          padding: 20px 0;
+          margin-top: 50px;
+      }
+      .footer a {
+          color: white;
+          text-decoration: none;
+          margin: 0 10px;
+          font-weight: bold;
+      }
+      .footer a:hover {
+          text-decoration: underline;
+      }
+      .footer .nav-links {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+      }
+      .col-md-4{
+        margin-top: 5rem;
+      }
+      /* For small devices (mobiles) */
+@media (max-width: 600px) {
+    body {
+      font-size: 14px;
+    }
+    .container {
+      width: 90%;
+      padding: 10px;
+    }
+  }
+  
+  /* For tablets */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+      width: 80%;
+    }
+  }
+  
+  /* For desktops */
+  @media (min-width: 1025px) {
+    .container {
+      width: 70%;
+    }
+  }
+  
+    
+
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div >Welcome to Plantation & Ayurveda Services</div>
+    </div>
+    
+    <div class="container mt-5">
+        <div class="row">
+
+          <div class="col-md-4">
+                <div class="card plant-card">
+                    <img src="img/AloeVera.jpg" class="card-img-top" alt="Plant">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Aloe Vera</h5>
+                        <p class="card-text">Best for skin & health.</p>
+                        <a href="plantList.html#aloevera" class="btn btn-custom">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card plant-card">
+                    <img src="img/Basil.jpg" class="card-img-top" alt="Plant">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tulsi</h5>
+                        <p class="card-text">A powerful Ayurvedic herb.</p>
+                        <a href="plantList.html#tulsi" class="btn btn-custom">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card plant-card">
+                    <img src="img/Neem.jpg" class="card-img-top" alt="Plant">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Neem</h5>
+                        <p class="card-text">Used in Ayurveda for centuries.</p>
+                        <a href="plantList.html#neem" class="btn btn-custom">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card plant-card">
+                  <img src="img/bahera.jpg" class="card-img-top" alt="Plant">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">Terminalia bellirica</h5>   
+                      <p class="card-text">Beneficial for Hair and Eyes</p>
+                      <a href="plantList.html#baheda" class="btn btn-custom">Learn More</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card plant-card">
+                <img src="img/asparagus.jpg" class="card-img-top" alt="Plant">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Asparagus </h5>
+                    <p class="card-text">Supports Women's Health and Hormonal Balance.</p>
+                    <a href="plantList.html#asparagus" class="btn btn-custom">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card plant-card">
+              <img src="img/Brahmi.jpg" class="card-img-top" alt="Plant">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Brahmi</h5>
+                  <p class="card-text">Beneficial for Memory and Mental Health</p>
+                  <a href="plantList.html#brahmi" class="btn btn-custom">Learn More</a>
+              </div>
+          </div>
+      </div>
+
+        </div>
+    </div>
+
+      
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Services</a>
+          <a href="#">Blog</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact Us</a>
+          <a href="#">FAQs</a>
+      </div>
+      <p>&copy; 2025 Plantation & Ayurveda. All rights reserved.</p>
+      <p>
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Terms of Service</a>
+      </p>
+  </footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">Left Side</div>
+      <div class="col-12 col-md-6">Right Side</div>
+    </div>
+  </div>
+  
+</body>
+</html>

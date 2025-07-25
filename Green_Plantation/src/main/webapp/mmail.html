@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact us</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      * {
+      box-sizing: border-box;
+      }
+      html, body {
+      min-height: 110vh;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px; 
+      color: #666;
+      }
+      input, textarea { 
+      outline: none;
+      }
+      body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: #5a7233;
+      }
+      h1 {
+      margin-top: 0;
+      font-weight: 500;
+      }
+      form {
+      position: relative;
+      width: 80%;
+      border-radius: 30px;
+      background: aliceblue;
+      }
+      .form-left-decoration,
+      .form-right-decoration {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 20px;
+      background: #5a7233;
+      }
+      .form-left-decoration {
+      bottom: 60px;
+      left: -30px;
+      }
+      .form-right-decoration {
+      top: 60px;
+      right: -30px;
+      }
+      .form-left-decoration:before,
+      .form-left-decoration:after,
+      .form-right-decoration:before,
+      .form-right-decoration:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 30px;
+      background: #fff;
+      }
+      .form-left-decoration:before {
+      top: -20px;
+      }
+      .form-left-decoration:after {
+      top: 20px;
+      left: 10px;
+      }
+      .form-right-decoration:before {
+      top: -20px;
+      right: 0;
+      }
+      .form-right-decoration:after {
+      top: 20px;
+      right: 10px;
+      }
+      .circle {
+      position: absolute;
+      bottom: 80px;
+      left: -55px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      }
+      .form-inner {
+      padding: 100px;
+      }
+      .form-inner input,
+      .form-inner textarea {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 20px;
+      background: #d0dfe8;
+      }
+      .form-inner textarea {
+      resize: none;
+      }
+      button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 20px;
+      border: none;
+      border-bottom: 4px solid #3e4f24;
+      background: #5a7233; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      button:hover {
+      background: #3e4f24;
+      } 
+      @media (min-width: 568px) {
+      form {
+      width: 60%;
+      }
+      }
+
+
+
+      *******************
+      body {
+  background: #323641;
+}
+
+.letter-image {
+  position: absolute;
+  top: 85%;
+  left: 70%;
+  width: 200px;
+  height: 200px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.animated-mail {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  transition: .4s;
+  
+  .body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    border-color: transparent transparent #e95f55 transparent;
+    z-index: 2;
+  }
+  
+  .top-fold {
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 100px 0 100px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-transition: transform .4s .4s, z-index .2s .4s;
+    -moz-transform-origin: 50% 0%;
+    -moz-transition: transform .4s .4s, z-index .2s .4s;
+    transform-origin: 50% 0%;
+    transition: transform .4s .4s, z-index .2s .4s;
+    border-color: #cf4a43 transparent transparent transparent;
+    z-index: 2;
+  }
+  
+  .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #cf4a43;
+    z-index: 0;
+  }
+  
+  .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px;
+    border-color: transparent transparent transparent #e15349;
+    z-index: 2;
+  }
+  
+  .letter {
+    left: 20px;
+    bottom: 0px;
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: .4s .2s;
+    -moz-transition: .4s .2s;
+    transition: .4s .2s;
+    
+    .letter-border {
+      height: 10px;
+      width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        #cb5a5e,
+        #cb5a5e 8px,
+        transparent 8px,
+        transparent 18px
+      );
+    }
+    
+    .letter-title {
+      margin-top: 10px;
+      margin-left: 5px;
+      height: 10px;
+      width: 40%;
+      background: #cb5a5e;
+    }
+    .letter-context {
+      margin-top: 10px;
+      margin-left: 5px;
+      height: 10px;
+      width: 20%;
+      background: #cb5a5e;
+    }
+    
+    .letter-stamp {
+      margin-top: 30px;
+      margin-left: 200px;
+      border-radius: 100%;
+      height: 30px;
+      width: 30px;
+      background: #cb5a5e;
+      opacity: 0.3;
+    }
+  }
+}
+
+.shadow {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  width: 400px;
+  height: 30px;
+  transition: .4s;
+  transform: translateX(-50%);
+  -webkit-transition: .4s;
+  -webkit-transform: translateX(-50%);
+  -moz-transition: .4s;
+  -moz-transform: translateX(-50%);
+  
+  border-radius: 100%;
+  background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+
+  .letter-image:hover {
+    .animated-mail {
+      transform: translateY(50px);
+      -webkit-transform: translateY(50px);
+      -moz-transform: translateY(50px);
+    }
+    
+    .animated-mail .top-fold {
+      transition: transform .4s, z-index .2s;
+      transform: rotateX(180deg);
+      -webkit-transition: transform .4s, z-index .2s;
+      -webkit-transform: rotateX(180deg);
+      -moz-transition: transform .4s, z-index .2s;
+      -moz-transform: rotateX(180deg);
+      z-index: 0;
+    }
+    
+    .animated-mail .letter {
+      height: 180px;
+    }
+    
+    .shadow {
+      width: 250px;
+    }
+  }
+    </style>
+  </head>
+  <body>
+    <form action="mail.jsp" class="decor">
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+        <h1>Go_Green Mail Service</h1>
+        <input type="email"name="from" placeholder="From">
+        <input type="email" name="too" placeholder="To"> 
+       
+        <input type="text" name ="subject"placeholder="Subject">
+        <textarea  name="mail"placeholder="Compose Mail..." rows="5"></textarea>
+        <button type="submit" href="/">Submit</button>
+      </div>
+    </form>
+    <div class="letter-image">
+      <div class="animated-mail">
+        <div class="back-fold"></div>
+        <div class="letter">
+          <div class="letter-border"></div>
+          <div class="letter-title"></div>
+          <div class="letter-context"></div>
+          <div class="letter-stamp">
+            <div class="letter-stamp-inner"></div>
+          </div>
+        </div>
+        <div class="top-fold"></div>
+        <div class="body"></div>
+        <div class="left-fold"></div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+  </body>
+</html>
