@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/index.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Ani Petrol Service</title>
+</head>
+<body class="bg-orange-50">
+
+  <!-- Header -->
+  <div class="header">
+    <h1 class="bg-gray-400 text-center p-8 text-orange-600 text-3xl font-bold">
+      Aniruddh Oil & Service
+    </h1>
+    <br />
+  </div>
+
+  <!-- Petrol Form -->
+  <form onsubmit="return calculateFuel(event)" id="formm"
+        class="bg-orange-100 text-center p-8 m-4 rounded-lg shadow-lg max-w-3xl mx-auto w-[95%]">
+
+    <h1 class="text-3xl font-bold text-orange-600">Petrol</h1>
+
+    <div class="mt-10">
+      <!-- Row 1 -->
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="w-full md:w-1/2 px-2">
+          <label for="Amount" class="ml-5 mt-10 text-orange-700">Amount in RS</label>
+          <input type="text" placeholder="Enter The Amount" id="Amount"
+                 class="bg-gray-200 text-gray-900 border border-orange-400 rounded p-2 m-4 w-full" />
+        </div>
+        <div class="w-full md:w-1/2 px-2">
+          <label for="fuel" class="ml-5 mt-10 text-orange-700">Fuel in Liter</label>
+          <input type="text" placeholder="Fuel" id="fuel"
+                 class="bg-gray-200 text-black border border-orange-400 rounded p-2 m-4 w-full" />
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="w-full md:w-1/2 px-2">
+          <label for="price" class="ml-5 mt-10 text-orange-700">Fuel Price</label>
+          <input type="text" placeholder="Price" id="price"
+                 class="bg-gray-200 text-black border border-orange-400 rounded p-2 m-4 w-full" />
+        </div>
+        <div class="w-full md:w-1/2 px-2">
+          <label for="density" class="ml-5 mt-10 text-orange-700">Fuel Density</label>
+          <input type="text" placeholder="Fuel density" value="55.6" id="density"
+                 class="bg-gray-200 text-gray-600 border border-orange-400 rounded p-2 m-4 w-full" />
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+        <button type="submit"
+                class="w-full sm:w-32 ml-0 sm:ml-28 bg-orange-500 text-white px-5 py-2 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out">
+          Start
+        </button>
+        <button type="button" onclick="reset()"
+                class="w-full sm:w-32 ml-0 sm:ml-28 bg-orange-500 text-white px-5 py-2 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out">
+          Reset
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <script src="Fuel.js"></script>
+</body>
+</html>
