@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
-import './Envelope.css';
+import "./Envelope.css";
 
 export default function Wish() {
   const [open, setOpen] = useState(false);
@@ -16,31 +15,55 @@ export default function Wish() {
   ];
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-100 via-purple-100 to-pink-200 p-6 overflow-hidden">
-      {/* Floating animated hearts */}
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden
+                    bg-gradient-to-br from-pink-200 via-purple-200 to-pink-300 animate-gradientMove p-6">
+      {/* Floating animated hearts & sparkles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(18)].map((_, i) => (
           <motion.div
-            key={i}
+            key={`heart-${i}`}
             className="absolute text-pink-400 text-4xl"
-            initial={{ y: "100vh", x: Math.random() * window.innerWidth }}
-            animate={{ y: "-10vh" }}
+            initial={{
+              y: "100vh",
+              x: Math.random() * window.innerWidth,
+              rotate: Math.random() * 360,
+            }}
+            animate={{ y: "-10vh", rotate: 360 }}
             transition={{
-              duration: 10 + Math.random() * 5,
+              duration: 12 + Math.random() * 6,
               repeat: Infinity,
-              delay: i * 0.5,
+              delay: i * 0.4,
             }}
           >
             ❤️
+          </motion.div>
+        ))}
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={`spark-${i}`}
+            className="absolute text-yellow-100 text-sm"
+            initial={{
+              y: "100vh",
+              x: Math.random() * window.innerWidth,
+              opacity: 0,
+            }}
+            animate={{ y: "-10vh", opacity: [0, 1, 0] }}
+            transition={{
+              duration: 10 + Math.random() * 6,
+              repeat: Infinity,
+              delay: i * 0.3,
+            }}
+          >
+            ✨
           </motion.div>
         ))}
       </div>
 
       {/* Page Heading */}
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl sm:text-4xl font-bold text-pink-600 mb-8 z-10"
+        className="text-4xl sm:text-5xl font-extrabold text-pink-700 mb-10 z-10 drop-shadow-lg"
       >
         💌 Lovely Wishes 💌
       </motion.h1>
@@ -50,12 +73,14 @@ export default function Wish() {
         {wishes.map((text, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            initial={{ opacity: 0, scale: 0.8, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.2 }}
-            whileHover={{ scale: 1.05, rotate: 2 }}
-            className="bg-white rounded-2xl shadow-lg border-4 border-pink-300 p-6 text-center text-lg font-semibold text-pink-700 hover:shadow-pink-400/50"
+            whileHover={{ scale: 1.1, rotate: 3 }}
+            className="bg-white rounded-3xl shadow-xl border-4 border-pink-300
+                       p-6 text-center text-lg font-semibold text-pink-700
+                       hover:shadow-pink-500/70 hover:animate-pulse transition"
           >
             {text}
           </motion.div>
@@ -66,29 +91,33 @@ export default function Wish() {
       <motion.div
         onClick={() => setOpen(true)}
         className="relative mt-16 cursor-pointer z-10 group"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        whileHover={{ scale: 1.05 }}
+        initial={{ y: 40, opacity: 0, rotate: -5 }}
+        animate={{
+          y: [40, 0, 10, 0],
+          opacity: 1,
+          rotate: [ -5, 5, -5 ],
+        }}
+        transition={{ duration: 3, repeat: Infinity, repeatType: "mirror" }}
+        whileHover={{ scale: 1.1 }}
       >
-          <div className="letter-image">
-      <div className="animated-mail">
-        <div className="back-fold"></div>
-        <div className="letter">
-          <div className="letter-border"></div>
-          <div className="letter-title"></div>
-          <div className="letter-context"></div>
-          <div className="letter-stamp">
-            <div className="letter-stamp-inner"></div>
+        <div className="letter-image">
+          <div className="animated-mail">
+            <div className="back-fold"></div>
+            <div className="letter">
+              <div className="letter-border"></div>
+              <div className="letter-title"></div>
+              <div className="letter-context"></div>
+              <div className="letter-stamp">
+                <div className="letter-stamp-inner"></div>
+              </div>
+            </div>
+            <div className="top-fold"></div>
+            <div className="body"></div>
+            <div className="left-fold"></div>
           </div>
+          <div className="shadow"></div>
         </div>
-        <div className="top-fold"></div>
-        <div className="body"></div>
-        <div className="left-fold"></div>
-      </div>
-      <div className="shadow"></div>
-    </div>
-     Open message ❤️
+        <p className="text-pink-600 font-bold mt-2 text-lg">Open message ❤️</p>
       </motion.div>
 
       {/* Modal with Glowing Message */}
@@ -101,10 +130,11 @@ export default function Wish() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
-            className="bg-white rounded-2xl p-10 shadow-2xl border-4 border-pink-400 relative max-w-sm text-center"
+            className="relative bg-white rounded-3xl p-10 shadow-2xl border-4 border-pink-400
+                       max-w-sm text-center animate-glowPink"
           >
             <motion.h2
-              className="text-3xl font-extrabold text-pink-600 animate-pulse"
+              className="text-3xl font-extrabold text-pink-600"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
@@ -123,6 +153,26 @@ export default function Wish() {
           </motion.div>
         </div>
       )}
+
+      {/* Custom keyframes */}
+      <style>{`
+        @keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-gradientMove {
+          background-size: 400% 400%;
+          animation: gradientMove 15s ease infinite;
+        }
+        @keyframes glowPink {
+          0%, 100% { box-shadow: 0 0 20px rgba(255,105,180,0.6); }
+          50% { box-shadow: 0 0 40px rgba(255,105,180,1); }
+        }
+        .animate-glowPink {
+          animation: glowPink 2.5s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }

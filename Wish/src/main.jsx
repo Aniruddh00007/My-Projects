@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Component/Login";
 import Layout from "./Layout";
-import Hero from "./Component/Hero";
+import Hero from "./Component/hero";
 import Wish from "./Component/Wish";
 import Love from "./Component/Love";
 import Contact from "./Component/Contact";
