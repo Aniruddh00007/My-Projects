@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SmokeyCursor from "./ui/SmokeyCursor";
 
 export default function RomanticContactCard() {
   const quotes = [
@@ -100,6 +101,14 @@ export default function RomanticContactCard() {
           </ul>
         </div>
       </motion.div>
+       <SmokeyCursor
+         splatRadius={0.1}
+        splatForce={3000}
+        densityDissipation={8}
+        velocityDissipation={5}
+        colorUpdateSpeed={5}
+       
+      />
     </div>
   );
 }

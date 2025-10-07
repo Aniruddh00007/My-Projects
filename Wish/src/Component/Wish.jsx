@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Envelope.css";
+import SmokeyCursor from "./ui/SmokeyCursor";
 
 export default function Wish() {
   const [open, setOpen] = useState(false);
 
   const wishes = [
-    "May your day sparkle with joy ✨",
+    "I love you more today than ever before, and I can’t wait for all the tomorrows we’ll share.” 💕🥂🌹",
     "Sending you love & laughter 💖",
     "Dream big & shine bright 🌟",
     "May happiness hug you always 🤗",
@@ -65,7 +66,7 @@ export default function Wish() {
         animate={{ opacity: 1, y: 0 }}
         className="text-4xl sm:text-5xl font-extrabold text-pink-700 mb-10 z-10 drop-shadow-lg"
       >
-        💌 Lovely Wishes 💌
+        💌 Happy 1st Anniversary, my love! 😘💌
       </motion.h1>
 
       {/* Wishes Grid */}
@@ -173,6 +174,14 @@ export default function Wish() {
           animation: glowPink 2.5s ease-in-out infinite;
         }
       `}</style>
+     <SmokeyCursor
+   splatRadius={0.1}
+  splatForce={3000}
+  densityDissipation={8}
+  velocityDissipation={5}
+  colorUpdateSpeed={5}
+ 
+/>
     </div>
   );
 }

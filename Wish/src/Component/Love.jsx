@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ThreeDHoverGallery from "./ui/ThreeDHoverGallery";
+import SmokeyCursor from "./ui/SmokeyCursor";
+
 
 function Collage({ images }) {
   // Heart floating animation
@@ -36,6 +39,7 @@ function Collage({ images }) {
       </motion.div>
 
       {/* Inner collage */}
+     
       <div className="grid grid-cols-2 grid-rows-2 gap-2 w-full h-full bg-white rounded-2xl shadow-lg p-2">
         <motion.div className="row-span-2 group/image" whileHover={{ scale: 1.1 }}>
           <img
@@ -64,6 +68,7 @@ function Collage({ images }) {
           />
         </motion.div>
       </div>
+      
     </motion.div>
   );
 }
@@ -90,8 +95,8 @@ function CollagePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-pink-50 via-pink-100 to-rose-100 flex flex-col items-center py-10 space-y-16">
-      <h1 className="text-4xl font-extrabold text-pink-700 drop-shadow-md mb-6">
-        💕 Our Collages 💕
+      <h1 className=" mt-10 text-4xl font-extrabold text-pink-700 drop-shadow-md mb-6 ">
+        💕 Our Golden Love Story 💕
       </h1>
 
       {rows.map((row, i) => (
@@ -103,7 +108,17 @@ function CollagePage() {
           </div>
           <h2 className="text-2xl font-semibold text-rose-700">{row.title}</h2>
         </div>
+        
       ))}
+      <ThreeDHoverGallery />
+       <SmokeyCursor
+         splatRadius={0.1}
+        splatForce={3000}
+        densityDissipation={8}
+        velocityDissipation={5}
+        colorUpdateSpeed={5}
+       
+      />
     </div>
   );
 }

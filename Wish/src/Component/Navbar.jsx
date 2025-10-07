@@ -7,6 +7,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = ["Hero", "Wish", "Love", "Contact"];
 
+  
   return (
     <nav className="w-full bg-gradient-to-r from-pink-300/80 via-rose-200/80 to-pink-300/80 backdrop-blur-md shadow-xl fixed top-0 left-0 z-50">
       <div className="px-3 sm:px-6 lg:px-8">
@@ -14,9 +15,9 @@ function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
-              src="/logo.png"
+              src="/Images/girl.jpg"
               alt="Logo"
-              className="h-12 w-auto ml-2 drop-shadow-lg hover:scale-110 transition-transform duration-300"
+              className="w-12 h-12 bg-blue-500 rounded-full ml-2 drop-shadow-lg hover:scale-110 transition-transform duration-300"
             />
           </div>
 

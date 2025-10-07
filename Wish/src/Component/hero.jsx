@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // ✅ useNavigate instead of Navigate
 import imgg from "../assets/backgr.jpg";
+import SmokeyCursor from "./ui/SmokeyCursor";
 
 function Hero() {
   const navigate = useNavigate(); // ✅ gives you the navigate() function
@@ -73,6 +74,14 @@ function Hero() {
           animation: fadeDown 1s ease-out;
         }
       `}</style>
+       <SmokeyCursor
+         splatRadius={0.1}
+        splatForce={3000}
+        densityDissipation={8}
+        velocityDissipation={5}
+        colorUpdateSpeed={5}
+       
+      />
     </section>
   );
 }
