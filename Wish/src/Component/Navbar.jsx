@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navItems = ["Hero", "Wish", "Love", "Contact"];
+  const navItems = ["Home", "Wish", "Love", "Contact"];
 
   
   return (

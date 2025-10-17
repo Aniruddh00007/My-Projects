@@ -1,11 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { motion } from "framer-motion";
 import ThreeDHoverGallery from "./ui/ThreeDHoverGallery";
 import SmokeyCursor from "./ui/SmokeyCursor";
 
-
-function Collage({ images }) {
-  // Heart floating animation
+// Memoized Collage component
+const Collage = memo(({ images }) => {
   const heartVariants = {
     initial: { opacity: 0, y: 20, scale: 0.5 },
     animate: {
@@ -26,7 +25,7 @@ function Collage({ images }) {
       transition={{ duration: 0.8, type: "spring" }}
       whileHover={{ scale: 1.05, rotate: 2 }}
     >
-      {/* Floating hearts when hovering the frame */}
+      {/* Floating Hearts */}
       <motion.div
         className="absolute inset-0 pointer-events-none flex justify-center"
         variants={heartVariants}
@@ -38,40 +37,26 @@ function Collage({ images }) {
         <span className="absolute text-rose-500 text-3xl top-1/2 right-1/4">💕</span>
       </motion.div>
 
-      {/* Inner collage */}
-     
+      {/* Collage Images */}
       <div className="grid grid-cols-2 grid-rows-2 gap-2 w-full h-full bg-white rounded-2xl shadow-lg p-2">
-        <motion.div className="row-span-2 group/image" whileHover={{ scale: 1.1 }}>
-          <img
-            src={images[0]}
-            alt="Collage"
-            className="w-full h-full object-cover rounded-xl 
-                       transition duration-300 group-hover/image:brightness-110 group-hover/image:saturate-150 group-hover/image:blur-[1px]"
-          />
-        </motion.div>
-
-        <motion.div className="group/image" whileHover={{ scale: 1.1 }}>
-          <img
-            src={images[1]}
-            alt="Collage"
-            className="w-full h-full object-cover rounded-xl 
-                       transition duration-300 group-hover/image:brightness-110 group-hover/image:saturate-150 group-hover/image:blur-[1px]"
-          />
-        </motion.div>
-
-        <motion.div className="group/image" whileHover={{ scale: 1.1 }}>
-          <img
-            src={images[2]}
-            alt="Collage"
-            className="w-full h-full object-cover rounded-xl 
-                       transition duration-300 group-hover/image:brightness-110 group-hover/image:saturate-150 group-hover/image:blur-[1px]"
-          />
-        </motion.div>
+        {images.map((src, idx) => (
+          <motion.div
+            key={idx}
+            className={idx === 0 ? "row-span-2 group/image" : "group/image"}
+            whileHover={{ scale: 1.1 }}
+          >
+            <img
+              src={src}
+              alt={`Collage ${idx}`}
+              className="w-full h-full object-cover rounded-xl 
+                         transition duration-300 group-hover/image:brightness-110 group-hover/image:saturate-150 group-hover/image:blur-[1px]"
+            />
+          </motion.div>
+        ))}
       </div>
-      
     </motion.div>
   );
-}
+});
 
 function CollagePage() {
   const rows = [
@@ -95,7 +80,7 @@ function CollagePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-pink-50 via-pink-100 to-rose-100 flex flex-col items-center py-10 space-y-16">
-      <h1 className=" mt-10 text-4xl font-extrabold text-pink-700 drop-shadow-md mb-6 ">
+      <h1 className="mt-10 text-4xl font-extrabold text-pink-700 drop-shadow-md mb-6">
         💕 Our Golden Love Story 💕
       </h1>
 
@@ -108,16 +93,16 @@ function CollagePage() {
           </div>
           <h2 className="text-2xl font-semibold text-rose-700">{row.title}</h2>
         </div>
-        
       ))}
+
+      {/* Optional heavy components */}
       <ThreeDHoverGallery />
-       <SmokeyCursor
-         splatRadius={0.1}
+      <SmokeyCursor
+        splatRadius={0.1}
         splatForce={3000}
         densityDissipation={8}
         velocityDissipation={5}
         colorUpdateSpeed={5}
-       
       />
     </div>
   );

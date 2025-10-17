@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ConfettiButton } from "../Component/ui/ConfettiButton";
 import { Sparkles } from "lucide-react";
+import SmokeyCursor from "./ui/SmokeyCursor";
 
 
 function Login() {
@@ -16,7 +17,7 @@ function Login() {
 
     if (password === correctPassword) {
       localStorage.setItem("isAuthenticated", "true");
-      navigate("/hero");
+      navigate("/Home");
     } else {
       setError("❌ Wrong password! Try again.");
     }
@@ -116,6 +117,8 @@ function Login() {
           animation-iteration-count: infinite;
         }
       `}</style>
+<SmokeyCursor />
+
     </div>
   );
 }

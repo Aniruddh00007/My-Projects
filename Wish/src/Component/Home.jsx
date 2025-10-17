@@ -27,7 +27,7 @@ function Hero() {
           Send heartfelt wishes wrapped in magic and starlight ✨
         </p>
 
-        {/* ✅ Correct onClick */}
+        
         <button
           onClick={() => navigate("/wish")}
           className="mt-8 px-8 py-3 text-lg font-semibold rounded-full
@@ -37,6 +37,15 @@ function Hero() {
                      border border-pink-200/40 backdrop-blur-sm"
         >
           Send a Wish 💌
+        </button>
+        <button onClick={()=> navigate("/Love")}  className="mt-8 px-8 py-3 text-lg font-semibold rounded-full
+                     bg-gradient-to-r from-pink-500 via-rose-500 to-fuchsia-500
+                     shadow-xl hover:shadow-rose-500/50
+                     hover:scale-110 transition-transform duration-300
+                     border border-pink-200/40 backdrop-blur-sm ml-4"
+                     >
+                      View Our Love 💖
+
         </button>
       </div>
 

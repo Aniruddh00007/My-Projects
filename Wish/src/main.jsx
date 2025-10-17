@@ -1,34 +1,44 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./Component/Login";
-import Layout from "./Layout";
-import Hero from "./Component/hero";
-import Wish from "./Component/Wish";
-import Love from "./Component/Love";
-import Contact from "./Component/Contact";
 import ProtectedRoute from "./Component/ProtectedRoute";
+import Layout from "./Layout";
 import "./index.css";
+
+// Lazy load components to reduce initial bundle size
+const Login = lazy(() => import("./Component/Login"));
+const Home = lazy(() => import("./Component/Home"));
+const Wish = lazy(() => import("./Component/Wish"));
+const Love = lazy(() => import("./Component/Love"));
+const Contact = lazy(() => import("./Component/Contact"));
 
 const router = createBrowserRouter([
   {
-    path: "/", 
-    element: <Login />, // login page without navbar
+    path: "/",
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Login />
+      </Suspense>
+    ),
   },
   {
     path: "/",
     element: (
       <ProtectedRoute>
-        <Layout />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Layout />
+        </Suspense>
       </ProtectedRoute>
     ),
     children: [
-      { path: "hero", element: <Hero /> },
-      { path: "wish", element: <Wish /> },
-      { path: "love", element: <Love /> },
-      { path: "contact", element: <Contact /> },
+      { path: "home", element: <Suspense fallback={<div>Loading...</div>}><Home /></Suspense> },
+      { path: "wish", element: <Suspense fallback={<div>Loading...</div>}><Wish /></Suspense> },
+      { path: "love", element: <Suspense fallback={<div>Loading...</div>}><Love /></Suspense> },
+      { path: "contact", element: <Suspense fallback={<div>Loading...</div>}><Contact /></Suspense> },
     ],
   },
 ]);
 
-createRoot(document.getElementById("root")).render(<RouterProvider router={router} />);
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
