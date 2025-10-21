@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // ✅ useNavigate instead of Navigate
-import imgg from "../assets/backgr.jpg";
+import imgg from "../assets/kkk.jpg";
 import SmokeyCursor from "./ui/SmokeyCursor";
 
 function Hero() {

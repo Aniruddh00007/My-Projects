@@ -63,15 +63,15 @@ function CollagePage() {
     {
       title: "💕 Memories Row 1 💕",
       collages: [
-        ["/Images/WE.jpg", "/Images/girl.jpg", "/Images/girl.jpg"],
-        ["/Images/girl.jpg", "/Images/girl.jpg", "/Images/girl.jpg"],
-        ["/Images/girl.jpg", "/Images/girl.jpg", "/Images/girl.jpg"],
+        ["/Images/img7.jpg", "/Images/img2.jpg", "/Images/img5.jpg"],
+        ["/Images/img15.jpg", "/Images/img16.jpg", "/Images/img17.jpg"],
+        ["/Images/img26.jpg", "/Images/img28.jpg", "/Images/img29.jpg"],
       ],
     },
     {
       title: "💕 Memories Row 2 💕",
       collages: [
-        ["/Images/girl.jpg", "/Images/girl.jpg", "/Images/girl.jpg"],
+        ["/Images/img10.jpg", "/Images/img.jpg", "/Images/img13.jpg"],
         ["/Images/girl.jpg", "/Images/girl.jpg", "/Images/girl.jpg"],
         ["/Images/girl.jpg", "/Images/girl.jpg", "/Images/girl.jpg"],
       ],
