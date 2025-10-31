@@ -50,7 +50,7 @@ export default function AuthForm() {
             <form className="flex flex-col gap-4">
               <input
                 type="email"
-                placeholder="Email Address"
+                placeholder="User Email or ID"
                 required
                 className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
               />

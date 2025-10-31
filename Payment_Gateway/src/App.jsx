@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import { Home, Signupp } from './Component/index.js'
+import Payment from './Component/Payment.jsx'  // ✅ Correct import
+import Home from './Component/Home.jsx'
+import Signupp from './Component/Signupp.jsx'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      {/* Full screen container */}
       <div className="w-screen h-screen m-0 p-0 overflow-hidden">
-        <Home />
-        {/* <Signupp /> */}
+        <Payment /> 
+        {/* <Home/>  ✅ Render Payment instead of Home */}
+        {/* <Signupp/> */}
       </div>
     </>
   )
