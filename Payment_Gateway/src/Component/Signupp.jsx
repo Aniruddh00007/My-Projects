@@ -1,176 +1,191 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function AuthForm() {
+  const navigate = useNavigate();
   const [isSignup, setIsSignup] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const [signupData, setSignupData] = useState({
+    name: "",
+    amount: "",
+    fatherName: "",
+    city: "",
+    password: "",
+    confirmPassword: "",
+    upi: "",
+  });
+
+  const [loginData, setLoginData] = useState({
+    name: "",
+    password: "",
+  });
+
+  const handleSignupChange = (e) => {
+    setSignupData({ ...signupData, [e.target.name]: e.target.value });
+  };
+
+  const handleLoginChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  };
+
+  // 🔹 Signup Submit
+  const handleSignupSubmit = async (e) => {
+    e.preventDefault();
+    if (signupData.password !== signupData.confirmPassword) {
+      alert("⚠️ Password and Confirm Password do not match!");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:9191/Userdata", signupData);
+      if (response.status === 200 || response.status === 201) {
+        alert("✅ Signup Successful!");
+        setSignupData({
+          name: "",
+          amount: "",
+          fatherName: "",
+          city: "",
+          password: "",
+          confirmPassword: "",
+          upi: "",
+        });
+        setIsSignup(false);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("❌ Signup Failed! Check backend.");
+    }
+  };
+
+  // 🔹 Login Submit
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Get all users from MongoDB
+      const response = await axios.get("http://localhost:9191/Userdata");
+      const users = response.data;
+
+      // Find matching user by name & password
+      const matchedUser = users.find(
+        (user) =>
+          user.name === loginData.name && user.password === loginData.password
+      );
+
+      if (matchedUser) {
+        alert(`✅ Welcome ${matchedUser.name}! Login Successful`);
+
+        // ✅ Save user info to localStorage
+        localStorage.setItem("username", matchedUser.name);
+        localStorage.setItem("userId", matchedUser.userId || matchedUser._id);
+
+        // Redirect to Home
+        navigate("/home");
+
+        setLoginData({ name: "", password: "" });
+      } else {
+        alert("❌ Invalid credentials! Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("⚠️ Failed to connect to backend!");
+    }
+  };
+
   return (
-      <>
-      <div className=" bg-blue-700"> 
-        <h1 className="text-gray-300 text-2xl font-bold text-left ml-10 ">   Aniruddh Payment Gateway..$$ </h1>  
-         </div>
-     
-    <div className="flex items-center justify-center min-w-fit min-h-screen bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500">
-      <div className="relative bg-white rounded-2xl shadow-2xl w-[400px] overflow-hidden p-8 transition-all duration-500 ease-in-out">
-        {/* Title */}
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6 transition-all duration-500">
-          {isSignup ? "Signup Form" : "Login Form"}
-        </h2>
+    <>
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 shadow-md py-4">
+        <h1 className="text-gray-100 text-2xl font-bold text-center tracking-wide">
+          💳 Payment Gateway
+        </h1>
+      </div>
 
-        {/* Slide Controls */}
-        <div className="relative flex w-full border border-gray-300 rounded-xl mb-6 overflow-hidden">
-          <button
-            onClick={() => setIsSignup(false)}
-            className={`w-1/2 text-lg font-semibold py-2 transition-all ${
-              !isSignup ? "text-white" : "text-gray-700 hover:text-blue-600"
-            }`}
-          >
-            Login
-          </button>
-          <button
-            onClick={() => setIsSignup(true)}
-            className={`w-1/2 text-lg font-semibold py-2 transition-all ${
-              isSignup ? "text-white" : "text-gray-700 hover:text-blue-600"
-            }`}
-          >
-            Signup
-          </button>
+      {/* Form Container */}
+      <div className="w-full min-h-screen bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 flex justify-center items-center py-10">
+        <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[400px] p-8">
+          <h2 className="text-3xl font-bold text-center mb-6">
+            {isSignup ? "Signup Form" : "Login Form"}
+          </h2>
 
-          {/* Animated background bar */}
-          <div
-            className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-blue-800 to-blue-500 rounded-xl transition-all duration-500 ease-in-out"
-            style={{ left: isSignup ? "50%" : "0%" }}
-          ></div>
-        </div>
+          {/* Switch Buttons */}
+          <div className="flex border border-gray-300 rounded-xl mb-6 overflow-hidden relative">
+            <button
+              type="button"
+              onClick={() => setIsSignup(false)}
+              className={`w-1/2 py-2 font-semibold ${
+                !isSignup ? "text-white" : "text-gray-700 hover:text-blue-600"
+              }`}
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              onClick={() => setIsSignup(true)}
+              className={`w-1/2 py-2 font-semibold ${
+                isSignup ? "text-white" : "text-gray-700 hover:text-blue-600"
+              }`}
+            >
+              Signup
+            </button>
+            <div
+              className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-blue-800 to-blue-500 transition-all duration-500 rounded-xl"
+              style={{ left: isSignup ? "50%" : "0%" }}
+            ></div>
+          </div>
 
-        {/* Conditional Form Rendering */}
-        <div className="transition-all duration-700 ease-in-out">
+          {/* Forms */}
           {!isSignup ? (
-            // Login Form
-            <form className="flex flex-col gap-4">
+            <form className="flex flex-col gap-4" onSubmit={handleLoginSubmit}>
               <input
-                type="email"
-                placeholder="User Email or ID"
+                type="text"
+                name="name"
+                placeholder="Username"
+                value={loginData.name}
+                onChange={handleLoginChange}
                 required
-                className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
+                className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none"
               />
-
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
+                  name="password"
                   placeholder="Password"
+                  value={loginData.password}
+                  onChange={handleLoginChange}
                   required
-                  className="h-12 w-full px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
+                  className="h-12 w-full px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-gray-500 hover:text-blue-600"
+                  className="absolute right-3 top-3 text-gray-500"
                 >
                   {showPassword ? "🙈" : "👁️"}
                 </button>
               </div>
-
-              <div className="text-right">
-                <a href="#" className="text-blue-600 text-sm hover:underline">
-                  Forgot password?
-                </a>
-              </div>
-
               <button
                 type="submit"
-                className="h-12 w-full rounded-xl bg-gradient-to-r from-blue-800 to-blue-500 text-white text-lg font-semibold hover:opacity-90 transition"
+                className="h-12 w-full rounded-xl bg-gradient-to-r from-blue-800 to-blue-500 text-white font-semibold"
               >
                 Login
               </button>
-
-              <p className="text-center text-sm mt-3">
-                Not a member?{" "}
-                <span
-                  className="text-blue-600 cursor-pointer hover:underline"
-                  onClick={() => setIsSignup(true)}
-                >
-                  Signup now
-                </span>
-              </p>
             </form>
           ) : (
-            // Signup Form
-            <form className="flex flex-col gap-4">
-              <input
-                type="Name"
-                placeholder="Name"
-                required
-                className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
-              />
-                 <input
-                type="Integer"
-                placeholder="Deposite Amount"
-                required
-                className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
-              />
-               <input
-                type="Name"
-                placeholder="Father Name"
-                required
-                className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
-              />
-               <input
-                type="text"
-                placeholder="City"
-                required
-                className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
-              />
-              <div className="relative">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  required
-                  className="h-12 w-full px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-gray-500 hover:text-blue-600"
-                >
-                  {showPassword ? "🙈" : "👁️"}
-                </button>
-              </div>
-
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                required
-                className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
-              />
-               <input
-                type="Pin"
-                placeholder="UPI Pin"
-                required
-                className="h-12 px-4 rounded-xl border border-gray-300 focus:border-blue-600 outline-none text-gray-700"
-              />
-
-              <button
-                type="submit"
-                className="h-12 w-full rounded-xl bg-gradient-to-r from-blue-800 to-blue-500 text-white text-lg font-semibold hover:opacity-90 transition"
-              >
-                Signup
-              </button>
-
-              <p className="text-center text-sm mt-3">
-                Already a member?{" "}
-                <span
-                  className="text-blue-600 cursor-pointer hover:underline"
-                  onClick={() => setIsSignup(false)}
-                >
-                  Login now
-                </span>
-              </p>
+            <form className="flex flex-col gap-4" onSubmit={handleSignupSubmit}>
+              <input type="text" name="name" placeholder="Full Name" value={signupData.name} onChange={handleSignupChange} required className="h-12 px-4 rounded-xl border border-gray-300"/>
+              <input type="number" name="amount" placeholder="Deposit Amount" value={signupData.amount} onChange={handleSignupChange} required className="h-12 px-4 rounded-xl border border-gray-300"/>
+              <input type="text" name="fatherName" placeholder="Father's Name" value={signupData.fatherName} onChange={handleSignupChange} required className="h-12 px-4 rounded-xl border border-gray-300"/>
+              <input type="text" name="city" placeholder="City" value={signupData.city} onChange={handleSignupChange} required className="h-12 px-4 rounded-xl border border-gray-300"/>
+              <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" value={signupData.password} onChange={handleSignupChange} required className="h-12 px-4 rounded-xl border border-gray-300"/>
+              <input type="password" name="confirmPassword" placeholder="Confirm Password" value={signupData.confirmPassword} onChange={handleSignupChange} required className="h-12 px-4 rounded-xl border border-gray-300"/>
+              <input type="text" name="upi" placeholder="UPI Pin" value={signupData.upi} onChange={handleSignupChange} required className="h-12 px-4 rounded-xl border border-gray-300"/>
+              <button type="submit" className="h-12 w-full mt-3 rounded-xl bg-gradient-to-r from-blue-800 to-blue-500 text-white font-semibold">Signup</button>
             </form>
           )}
         </div>
       </div>
-    </div>
     </>
   );
 }

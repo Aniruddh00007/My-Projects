@@ -1,19 +1,19 @@
-import { useState } from 'react'
-import Payment from './Component/Payment.jsx'  // ✅ Correct import
-import Home from './Component/Home.jsx'
-import Signupp from './Component/Signupp.jsx'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Signupp from "../Component/Signupp";
+import Home from "./Home";
+import Payment from "./Payment";
 
 function App() {
   return (
-    <>
-      <div className="w-screen h-screen m-0 p-0 overflow-hidden">
-        <Payment /> 
-        {/* <Home/>  ✅ Render Payment instead of Home */}
-        {/* <Signupp/> */}
-      </div>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Signupp/>} />
+        <Route path="/signupp" element={<Signupp />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/payment" element={<Payment />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
