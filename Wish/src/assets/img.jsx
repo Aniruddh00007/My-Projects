@@ -1,1 +1,0 @@
-import img1 from "../assets/girl.jpg";
