@@ -1,15 +1,36 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-  const [userName, setUserName] = useState("");
+  const [userData, setUserData] = useState({ name: "", id: "" });
 
   useEffect(() => {
-    // Fetch logged-in user from localStorage
-    const storedUser = localStorage.getItem("userId");
-    if (storedUser) setUserName(storedUser);
-    else navigate("/"); // redirect to login if no user
+    // Get stored userId from localStorage (set during login)
+    const storedUserId = localStorage.getItem("userId");
+
+    if (!storedUserId) {
+      navigate("/"); // redirect to login if not found
+      return;
+    }
+
+    // Fetch user details from backend by ID
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:9191/Userdata/${storedUserId}`);
+        if (response.data) {
+          setUserData({
+            name: response.data.name || "User",
+            id: response.data._id || storedUserId,
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
   }, [navigate]);
 
   return (
@@ -18,7 +39,7 @@ function Home() {
       {/* Header */}
       <div className="bg-gradient-to-tl from-blue-900 via-blue-700 to-blue-500 h-16 flex items-center shadow-lg px-6">
         <h1 className="text-2xl font-bold font-serif text-white">
-          Welcome, {userName || "User"}!
+          Welcome, {userData.name}!
         </h1>
       </div>
 
@@ -30,7 +51,12 @@ function Home() {
             This is your personalized dashboard of the Payment Gateway. You can view your details and make payments securely.
           </p>
           <div className="text-lg text-gray-300 mb-4">
-            Your User ID: <span className="font-semibold text-white">{userName}</span>
+            <div>
+              <strong>User Name:</strong> <span className="text-white">{userData.name}</span>
+            </div>
+            <div>
+              <strong>User ID:</strong> <span className="text-white">{userData.id}</span>
+            </div>
           </div>
           <button
             onClick={() => navigate("/payment")}
@@ -42,30 +68,17 @@ function Home() {
 
         {/* Extra Info Cards */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl px-4">
-          <div className="bg-blue-700 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <h3 className="text-xl font-bold mb-2">Secure Payments</h3>
-            <p className="text-gray-200">
-              All transactions are encrypted and processed securely using industry standards.
-            </p>
-          </div>
-          <div className="bg-blue-700 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <h3 className="text-xl font-bold mb-2">Fast Transactions</h3>
-            <p className="text-gray-200">
-              Payments are processed instantly, making your experience smooth and hassle-free.
-            </p>
-          </div>
-          <div className="bg-blue-700 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <h3 className="text-xl font-bold mb-2">Track Your Balance</h3>
-            <p className="text-gray-200">
-              View your account details and track your deposits easily from your dashboard.
-            </p>
-          </div>
-          <div className="bg-blue-700 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <h3 className="text-xl font-bold mb-2">24/7 Support</h3>
-            <p className="text-gray-200">
-              Our support team is always available to help you with any queries or issues.
-            </p>
-          </div>
+          {[
+            { title: "Secure Payments", desc: "All transactions are encrypted and processed securely using industry standards." },
+            { title: "Fast Transactions", desc: "Payments are processed instantly, making your experience smooth and hassle-free." },
+            { title: "Track Your Balance", desc: "View your account details and track your deposits easily from your dashboard." },
+            { title: "24/7 Support", desc: "Our support team is always available to help you with any queries or issues." }
+          ].map((card, index) => (
+            <div key={index} className="bg-blue-700 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+              <p className="text-gray-200">{card.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
