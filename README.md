@@ -1,7 +1,7 @@
 
 # 🚀 Aniruddh's Project Vault  
 
-Welcome to my **Project Vault** — a curated collection of my hands-on development projects.  
+Welcome to my **Project Vault** — acurated collection of my hands-on development projects.  
 Each project in this repository reflects a step in my journey of mastering **Frontend, Backend, and Full-Stack** development.  
 
 ---
