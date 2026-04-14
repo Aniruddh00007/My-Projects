@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getLatestMetric } from "../Services/api";
 import CPUChart from "../CPUChart";
 import RAMChart from "../RAMChart";
+import { optimizeSystem } from "../Services/api";
+
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
@@ -28,13 +30,23 @@ const Dashboard = () => {
   const statusColor = isHighLoad ? "text-red-400" : "text-green-400";
   const borderColor = isHighLoad ? "border-red-500/40" : "border-green-500/30";
 
-  const handleOptimize = () => {
+ const handleOptimize = async () => {
+  try {
     setOptimizing(true);
-    setTimeout(() => {
-      setOptimizing(false);
-      alert("System Optimized Successfully");
-    }, 1200);
-  };
+
+    const res = await optimizeSystem();
+
+    setData(res); //update UI with new data
+
+    alert(res.suggestion); //  show suggestion from backend
+
+  } catch (err) {
+    console.error("Optimize Error:", err);
+    alert("Optimization failed");
+  } finally {
+    setOptimizing(false);
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-6">

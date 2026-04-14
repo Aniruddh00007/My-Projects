@@ -19,3 +19,10 @@ export const collectMetric = async () => {
   const res = await axios.post(`${BASE_URL}/collect`);
   return res.data;
 };
+
+// Optimize system
+
+export const optimizeSystem = async () => {
+  const res = await axios.get(`${BASE_URL}/optimize`);
+  return res.data;
+};
