@@ -4,42 +4,62 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 
 function CPUChart({ data }) {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    if (data) {
-      setChartData((prev) => [
-        ...prev,
-        {
-          time: new Date(data.timestamp).toLocaleTimeString(),
-          cpu: data.cpuUsage,
-        },
-      ].slice(-10)); // last 10 points only
+    if (data && data.timestamp) {
+      setChartData((prev) => {
+        const newData = [
+          ...prev,
+          {
+            time: new Date(data.timestamp).toLocaleTimeString(),
+            cpu: Number(data.cpuUsage || 0),
+          },
+        ];
+
+        return newData.slice(-10); // last 10 points
+      });
     }
   }, [data]);
 
-  return (
-    <div style={{ width: "100%", height: 300 }}>
-      <h3>CPU Usage</h3>
+  // 👇 IMPORTANT: avoid empty chart crash
+  if (chartData.length === 0) {
+    return (
+      <div className="flex items-center justify-center h-[180px] text-gray-400 text-sm">
+        Loading chart...
+      </div>
+    );
+  }
 
+  return (
+    <div className="w-full h-[180px]">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={chartData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" />
-          <YAxis domain={[0, 100]} />
+          <CartesianGrid strokeDasharray="2 2" opacity={0.2} />
+
+          <XAxis
+            dataKey="time"
+            tick={{ fontSize: 10 }}
+            interval="preserveStartEnd"
+          />
+
+          <YAxis domain={[0, 100]} tick={{ fontSize: 10 }} />
+
           <Tooltip />
+
           <Line
             type="monotone"
             dataKey="cpu"
             stroke="#00ff99"
             strokeWidth={2}
-            dot={{ r: 3 }}
+            dot={false} // cleaner look
+            isAnimationActive={true}
           />
         </LineChart>
       </ResponsiveContainer>
