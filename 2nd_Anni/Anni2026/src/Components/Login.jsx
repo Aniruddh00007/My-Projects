@@ -7,77 +7,81 @@ function Login({ onLogin }) {
     hug: "",
   });
 
-  const [message, setMessage] = useState("");
-  const [wrong, setWrong] = useState(false);
-  const [unlocked, setUnlocked] = useState(false);
+  const [error, setError] = useState("");
 
-  // My Actual Answers (for validation)
   const correctAnswers = {
-    proposal: "26-10-2024",
-    kiss: "13-11-2024",
-    hug: "14-11-2024",
+    proposal: "26 October 2024",
+    kiss: "13 November 2024",
+    hug: "14 November 2024",
   };
 
   const questions = [
     {
       id: "proposal",
-      number: "01",
-      emoji: "💍",
-      title: "When did you propose to me?",
+      title: "Our First Proposal",
+      question: "Do you remember when you proposed to me?",
+      description:
+        "That moment when our story became something more than just a beautiful memory.",
+      image:
+        "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
       options: [
-        "23-10-2024",
-        "18-10-2024",
-        "26-10-2024",
-        "25-10-2024",
+        "15 October 2024",
+        "26 October 2024",
+        "30 October 2024",
+        "25 October 2024",
       ],
     },
+
     {
       id: "kiss",
-      number: "02",
-      emoji: "💋",
-      title: "When was our first kiss?",
+      title: "Our First Kiss",
+      question: "Do you remember when we had our first kiss?",
+      description:
+        "A little moment that somehow became one of the most unforgettable memories of us.",
+      image:
+        "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop",
       options: [
-        "13-11-2024",
-        "18-11-2024",
-        "10-11-2024",
-        "15-11-2024",
+        "13 November 2024",
+        "16 November 2024",
+        "14 November 2024",
+        "25 October 2024",
       ],
     },
+
     {
       id: "hug",
-      number: "03",
-      emoji: "🫂",
-      title: "When did we have our first hug?",
+      title: "Our First Hug",
+      question: "Do you remember our first hug?",
+      description:
+        "The first time we held each other close and everything around us somehow disappeared.",
+      image:
+        "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop",
       options: [
-        "10-11-2024",
-        "12-11-2024",
-        "14-11-2024",
-        "20-11-2024",
+        "14 November 2024",
+        "19 November 2024",
+        "04 November 2024",
+        "18 November 2024",
       ],
     },
   ];
 
-  const handleAnswer = (questionId, answer) => {
+  const handleAnswer = (id, value) => {
     setAnswers((prev) => ({
       ...prev,
-      [questionId]: answer,
+      [id]: value,
     }));
 
-    setMessage("");
-    setWrong(false);
+    setError("");
   };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-
+  const handleSubmit = () => {
     const allAnswered =
       answers.proposal &&
       answers.kiss &&
       answers.hug;
 
     if (!allAnswered) {
-      setWrong(true);
-      setMessage("Come on... answer all three questions first! ❤️");
+      setError("Answer all three memories first ❤️");
       return;
     }
 
@@ -87,383 +91,329 @@ function Login({ onLogin }) {
       answers.hug === correctAnswers.hug;
 
     if (allCorrect) {
-      setWrong(false);
-      setMessage("You remember everything! ❤️");
-      setUnlocked(true);
+      setError("");
 
-      setTimeout(() => {
-        if (onLogin) {
-          onLogin();
-        }
-      }, 2000);
+      if (onLogin) {
+        onLogin();
+      }
     } else {
-      setWrong(true);
-      setMessage(
-        "Hmm... Something doesn't feel right 😜 Try again!"
+      setError(
+        "Hmm... one of your memories seems a little confused 😜 Try again!"
       );
     }
   };
 
   return (
-    <div
-      className="
-        min-h-screen min-h-[100dvh]
-        w-full
-        overflow-hidden
-        relative
-        flex items-center justify-center
-        px-4 py-8
-        bg-gradient-to-br
-        from-pink-50
-        via-rose-100
-        to-pink-200
-      "
-    >
+    <div className="min-h-screen bg-gradient-to-b from-[#fff9fa] to-[#fff5f6] text-[#5a5568]">
+      {/* ================= HEADER ================= */}
+      <section className="pt-16 sm:pt-24 pb-14 text-center">
+        <p className="uppercase tracking-[5px] text-[11px] text-[#c97f88] font-semibold">
+          A Little Memory Challenge
+        </p>
 
-      {/* Floating Hearts */}
+        <h1 className="mt-4 font-serif text-4xl sm:text-5xl md:text-6xl text-[#6b647a] leading-tight">
+          Do You Remember
+          <br />
+          <span className="text-[#9b5a66]">Our Story?</span>
+        </h1>
 
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <span className="absolute left-[8%] bottom-[-30px] text-2xl opacity-40 animate-[float_9s_linear_infinite]">
-          ❤️
-        </span>
+        <div className="mx-auto mt-5 w-16 h-[2px] bg-gradient-to-r from-transparent via-[#eebdc3] to-transparent" />
 
-        <span className="absolute left-[25%] bottom-[-30px] text-xl opacity-40 animate-[float_12s_linear_2s_infinite]">
-          💕
-        </span>
+        <p className="max-w-xl mx-auto mt-6 px-5 text-sm sm:text-base leading-7 text-[#7a7582]">
+          Before you enter our little world, let’s see how well you remember the
+          moments that made{" "}
+          <span className="text-[#c0757f] font-semibold">us.</span>
+        </p>
+      </section>
 
-        <span className="absolute left-[45%] bottom-[-30px] text-2xl opacity-40 animate-[float_10s_linear_4s_infinite]">
-          💗
-        </span>
+      {/* ================= TIMELINE ================= */}
+      <section className="relative max-w-6xl mx-auto px-5 sm:px-8 pb-24">
+        {/* Center Timeline */}
+        <div
+          className="
+            hidden md:block
+            absolute
+            left-1/2
+            top-0
+            bottom-0
+            w-px
+            bg-gradient-to-b
+            from-transparent
+            via-[#f0d9dd]
+            to-transparent
+            -translate-x-1/2
+          "
+        />
 
-        <span className="absolute left-[65%] bottom-[-30px] text-xl opacity-40 animate-[float_13s_linear_1s_infinite]">
-          💖
-        </span>
-
-        <span className="absolute left-[82%] bottom-[-30px] text-2xl opacity-40 animate-[float_11s_linear_3s_infinite]">
-          ❤️
-        </span>
-      </div>
-
-      {/* Main Card */}
-
-      <div
-        className="
-          relative z-10
-          w-full
-          max-w-[520px]
-          rounded-[28px]
-          bg-white/80
-          backdrop-blur-xl
-          border border-white/70
-          shadow-[0_25px_60px_rgba(155,70,100,0.18)]
-          px-5 py-8
-          sm:px-9 sm:py-10
-          animate-[cardAppear_0.8s_ease]
-        "
-      >
-
-        {!unlocked ? (
-          <>
-            {/* Header */}
-
-            <div className="text-center">
-
-              <div className="text-5xl mb-3 animate-[heartbeat_1.5s_ease-in-out_infinite]">
-                ❤️
-              </div>
-
-              <p className="text-[11px] sm:text-xs font-bold tracking-[2px] uppercase text-pink-600">
-                Our 2nd Anniversary
-              </p>
-
-              <h1
-                className="
-                  mt-3
-                  font-serif
-                  text-[30px]
-                  sm:text-[38px]
-                  leading-tight
-                  font-semibold
-                  text-[#472432]
-                "
-              >
-                Do You Remember
-                <br />
-                <span className="text-pink-600">
-                  Our Story?
-                </span>
-              </h1>
-
-              <p className="mt-4 text-sm leading-6 text-[#765763]">
-                Before entering our little world...
-                <br />
-                let's see how well you remember us. 🥰
-              </p>
-
-            </div>
-
-            {/* Questions */}
-
-            <form
-              onSubmit={handleLogin}
-              className="mt-8 space-y-6"
-            >
-
-              {questions.map((question) => (
+        <div className="space-y-24 md:space-y-32">
+          {questions.map((item, index) => {
+            const isEven = index % 2 !== 0;
+            return (
+              <div key={item.id} className="relative">
+                {/* Timeline Dot */}
                 <div
-                  key={question.id}
                   className="
-                    p-4
-                    sm:p-5
-                    rounded-2xl
-                    bg-white/70
-                    border border-pink-100
-                    shadow-sm
+                    hidden md:flex
+                    absolute
+                    left-1/2
+                    top-1/2
+                    -translate-x-1/2
+                    -translate-y-1/2
+                    z-20
+                    w-12
+                    h-12
+                    rounded-full
+                    bg-gradient-to-br
+                    from-[#fff9fa]
+                    to-[#fff5f6]
+                    border
+                    border-[#eec6cb]
+                    items-center
+                    justify-center
+                    text-xl
+                    shadow-[0_6px_20px_rgba(180,120,130,0.18)]
                   "
                 >
+                  {index === 0 && "💍"}
+                  {index === 1 && "💋"}
+                  {index === 2 && "🫂"}
+                </div>
 
-                  {/* Question Heading */}
-
-                  <div className="flex items-start gap-3">
-
+                {/* ================= ROW ================= */}
+                <div
+                  className={`
+                    grid
+                    grid-cols-1
+                    md:grid-cols-2
+                    gap-10
+                    md:gap-24
+                    items-center
+                  `}
+                >
+                  {/* IMAGE */}
+                  <div
+                    className={`
+                      ${isEven ? "md:order-2" : "md:order-1"}
+                    `}
+                  >
                     <div
                       className="
-                        flex-shrink-0
-                        w-10 h-10
-                        rounded-full
-                        bg-pink-100
-                        flex items-center justify-center
-                        text-lg
+                        group
+                        relative
+                        overflow-hidden
+                        rounded-xl
+                        bg-[#f6f1f3]
+                        shadow-[0_10px_40px_rgba(90,70,80,0.12)]
                       "
                     >
-                      {question.emoji}
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="
+                          w-full
+                          aspect-[4/3]
+                          object-cover
+                          transition-transform
+                          duration-700
+                          group-hover:scale-105
+                        "
+                      />
+
+                      {/* Image Overlay */}
+                      <div
+                        className="
+                          absolute
+                          inset-0
+                          bg-gradient-to-t
+                          from-black/25
+                          via-black/5
+                          to-transparent
+                          opacity-0
+                          group-hover:opacity-100
+                          transition-opacity
+                          duration-500
+                        "
+                      />
                     </div>
-
-                    <div>
-                      <p className="text-[11px] font-bold text-pink-500 tracking-wider">
-                        MEMORY {question.number}
-                      </p>
-
-                      <h2 className="mt-1 text-sm sm:text-base font-semibold text-[#55323f]">
-                        {question.title}
-                      </h2>
-                    </div>
-
                   </div>
 
-                  {/* Options */}
+                  {/* CONTENT */}
+                  <div
+                    className={`
+                      ${isEven ? "md:order-1 md:text-right" : "md:order-2 md:text-left"}
+                    `}
+                  >
+                    {/* Date */}
+                    <span
+                      className="
+                        inline-block
+                        px-4
+                        py-1.5
+                        rounded-full
+                        bg-gradient-to-r
+                        from-[#f9dbe0]
+                        to-[#f8d3d9]
+                        text-[#9b5a66]
+                        text-[11px]
+                        font-semibold
+                        tracking-wide
+                        shadow-sm
+                      "
+                    >
+                      {item.date}
+                    </span>
 
-                  <div className="grid grid-cols-2 gap-2 mt-4">
+                    {/* Title */}
+                    <h2
+                      className="
+                        mt-5
+                        font-serif
+                        text-2xl
+                        sm:text-3xl
+                        text-[#6b647a]
+                        leading-snug
+                      "
+                    >
+                      {item.title}
+                    </h2>
 
-                    {question.options.map((option) => {
+                    {/* Question */}
+                    <p
+                      className="
+                        mt-4
+                        text-sm
+                        sm:text-base
+                        font-semibold
+                        leading-6
+                        text-[#5f5a6b]
+                      "
+                    >
+                      {item.question}
+                    </p>
 
-                      const selected =
-                        answers[question.id] === option;
+                    {/* Description */}
+                    <p
+                      className="
+                        mt-3
+                        text-sm
+                        leading-6
+                        text-[#8a8490]
+                        max-w-md
+                        md:ml-auto
+                      "
+                    >
+                      {item.description}
+                    </p>
 
-                      return (
-                        <button
-                          type="button"
-                          key={option}
-                          onClick={() =>
-                            handleAnswer(
-                              question.id,
-                              option
-                            )
-                          }
-                          className={`
-                            min-h-[44px]
-                            px-2
-                            rounded-xl
-                            text-xs sm:text-sm
-                            font-medium
-                            border
-                            transition-all duration-200
-                            ${
-                              selected
-                                ? "bg-pink-600 text-white border-pink-600 shadow-md shadow-pink-200 scale-[1.02]"
-                                : "bg-white/80 text-[#765763] border-pink-100 hover:border-pink-300 hover:bg-pink-50"
+                    {/* ANSWERS */}
+                    <div
+                      className={`
+                        mt-7
+                        grid
+                        grid-cols-2
+                        gap-3
+                        max-w-md
+                        ${isEven ? "md:ml-auto" : ""}
+                      `}
+                    >
+                      {item.options.map((option) => {
+                        const selected =
+                          answers[item.id] === option;
+
+                        return (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() =>
+                              handleAnswer(
+                                item.id,
+                                option
+                              )
                             }
-                          `}
-                        >
-                          {option}
-                        </button>
-                      );
-                    })}
+                            className={`
+                              px-3
+                              py-3.5
+                              rounded-xl
+                              border
+                              text-xs
+                              sm:text-sm
+                              transition-all
+                              duration-200
+                              font-medium
+                              tracking-wide
 
+                              ${
+                                selected
+                                  ? "bg-gradient-to-br from-[#d97f8a] to-[#c96f7a] text-white border-transparent shadow-[0_8px_24px_rgba(210,120,130,0.35)]"
+                                  : "bg-white border-[#f0d9dd] text-[#6b6475] hover:border-[#e5b4bb] hover:bg-[#fff7f8]"
+                              }
+                            `}
+                          >
+                            {option}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-
                 </div>
-              ))}
+              </div>
+            );
+          })}
+        </div>
 
-              {/* Enter Button */}
+        {/* ================= FINAL ENTRY ================= */}
+        <div className="mt-24 md:mt-32 text-center">
+          <div className="mx-auto w-16 h-px bg-gradient-to-r from-transparent via-[#eec3ca] to-transparent" />
 
-              <button
-                type="submit"
-                className="
-                  w-full
-                  min-h-[54px]
-                  rounded-2xl
-                  bg-gradient-to-r
-                  from-pink-600
-                  to-rose-600
-                  text-white
-                  font-bold
-                  text-sm sm:text-base
-                  shadow-lg
-                  shadow-pink-200
-                  transition-all
-                  duration-200
-                  hover:-translate-y-1
-                  hover:shadow-xl
-                  hover:shadow-pink-300
-                  active:translate-y-0
-                "
-              >
-                Unlock Our Story ❤️
-              </button>
+          <p className="mt-7 text-sm text-[#8a8490]">
+            Three memories.
+            <span className="mx-2 text-[#d48a94]">•</span>
+            Three answers.
+            <span className="mx-2 text-[#d48a94]">•</span>
+            One story.
+          </p>
 
-            </form>
-
-            {/* Message */}
-
-            {message && (
-              <p
-                className={`
-                  mt-5
-                  text-center
-                  text-sm
-                  font-semibold
-                  animate-[messageAppear_0.3s_ease]
-                  ${
-                    wrong
-                      ? "text-rose-600"
-                      : "text-pink-600"
-                  }
-                `}
-              >
-                {message}
-              </p>
-            )}
-
-            <p className="mt-4 text-center text-[11px] text-[#a17a88]">
-              Three memories. One story. One love. ❤️
+          {/* Error */}
+          {error && (
+            <p className="mt-6 text-sm font-semibold text-[#b86a73]">
+              {error}
             </p>
+          )}
 
-          </>
-        ) : (
+          {/* Button */}
+          <button
+            onClick={handleSubmit}
+            className="
+              mt-8
+              px-9
+              sm:px-14
+              py-4.5
+              rounded-full
+              bg-gradient-to-br
+              from-[#d97f8a]
+              to-[#c96f7a]
+              hover:from-[#c96f7a]
+              hover:to-[#b8636e]
+              text-white
+              text-sm
+              sm:text-base
+              font-semibold
+              shadow-[0_10px_30px_rgba(210,120,130,0.35)]
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              active:scale-95
+            "
+          >
+            Enter Our World
+            <span className="ml-3">❤️</span>
+          </button>
 
-          /* SUCCESS SCREEN */
-
-          <div className="text-center py-10 animate-[successAppear_0.6s_ease]">
-
-            <div className="text-7xl animate-[heartbeat_1s_ease-in-out_infinite]">
-              💖
-            </div>
-
-            <h1
-              className="
-                mt-6
-                font-serif
-                text-3xl sm:text-4xl
-                font-semibold
-                text-pink-600
-              "
-            >
-              You Remembered Everything!
-            </h1>
-
-            <p className="mt-5 text-[#765763] leading-7">
-              I guess some memories
-              <br />
-              are impossible to forget... 🥰
-            </p>
-
-            <p className="mt-4 font-semibold text-pink-600">
-              Welcome to our story ❤️
-            </p>
-
-            <div className="mt-8 text-2xl animate-[heartbeat_1s_ease-in-out_infinite]">
-              ❤️
-            </div>
-
-          </div>
-
-        )}
-
-      </div>
-
-      {/* Animations */}
-
-      <style>
-        {`
-          @keyframes heartbeat {
-            0%, 100% {
-              transform: scale(1);
-            }
-
-            50% {
-              transform: scale(1.15);
-            }
-          }
-
-          @keyframes cardAppear {
-            from {
-              opacity: 0;
-              transform: translateY(30px) scale(0.96);
-            }
-
-            to {
-              opacity: 1;
-              transform: translateY(0) scale(1);
-            }
-          }
-
-          @keyframes messageAppear {
-            from {
-              opacity: 0;
-              transform: translateY(5px);
-            }
-
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes successAppear {
-            from {
-              opacity: 0;
-              transform: scale(0.8);
-            }
-
-            to {
-              opacity: 1;
-              transform: scale(1);
-            }
-          }
-
-          @keyframes float {
-            0% {
-              transform: translateY(0) rotate(0deg);
-              opacity: 0;
-            }
-
-            20% {
-              opacity: 0.4;
-            }
-
-            80% {
-              opacity: 0.4;
-            }
-
-            100% {
-              transform: translateY(-110vh) rotate(360deg);
-              opacity: 0;
-            }
-          }
-        `}
-      </style>
-
+          <p className="mt-4 text-xs text-[#aaa3a8]">
+            Only if you remember us correctly...
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
