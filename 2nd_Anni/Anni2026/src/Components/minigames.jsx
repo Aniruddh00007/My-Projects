@@ -1560,7 +1560,7 @@ function MiniGames() {
               <button
                 type="button"
                 onClick={() => {
-                  window.location.href = "/open-when";
+                  window.location.href = "/MemoryRoom";
                 }}
                 className="
                   inline-flex
@@ -1581,7 +1581,7 @@ function MiniGames() {
                   hover:text-white
                 "
               >
-                ← Back To Letters
+                ← Go to Memory Room
               </button>
 
             </div>
