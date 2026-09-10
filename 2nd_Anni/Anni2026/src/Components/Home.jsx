@@ -235,7 +235,7 @@ function App() {
 
   return (
 
-    <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-[#050208] via-[#0b0510] to-[#120617] text-white">
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#050208] via-[#0b0510] to-[#120617] text-white">
 
 
       {/* ================= BACKGROUND ================= */}
@@ -341,11 +341,14 @@ function App() {
         className="
           relative
           flex
-          min-h-screen
+          min-h-[100dvh]
           flex-col
           items-center
           justify-center
-          px-6
+          px-4
+          py-16
+          sm:px-6
+          sm:py-20
           text-center
         "
       >
@@ -353,7 +356,7 @@ function App() {
 
         {/* Top Tag */}
 
-        <div className="mb-8 animate-[fadeDown_1s_ease]">
+        <div className="mb-6 sm:mb-8 animate-[fadeDown_1s_ease]">
 
           <span
             className="
@@ -363,9 +366,11 @@ function App() {
               border
               border-pink-500/20
               bg-pink-500/[0.07]
-              px-5
+              px-4
               py-2
-              text-sm
+              text-xs
+              sm:px-5
+              sm:text-sm
               text-pink-300
               backdrop-blur-xl
               shadow-[0_0_30px_rgba(236,72,153,0.08)]
@@ -380,11 +385,14 @@ function App() {
 
         <p
           className="
-            mb-5
-            text-xs
+            mb-4
+            max-w-full
+            text-[10px]
+            sm:mb-5
             sm:text-sm
             uppercase
-            tracking-[0.4em]
+            tracking-[0.22em]
+            sm:tracking-[0.4em]
             text-pink-500
             font-medium
             animate-[fadeUp_1s_ease]
@@ -397,37 +405,62 @@ function App() {
 
 
 
-        {/* Names */}
+{/* ================= NAMES ================= */}
 
-        <h1
-          className="
-            font-serif
-            text-5xl
-            font-semibold
-            tracking-tight
-            text-[#fff5f8]
-            sm:text-7xl
-            md:text-8xl
-            animate-[fadeUp_1.15s_ease]
-          "
-        >
+<div className="w-full px-2 sm:px-4">
+  <div
+    className="
+      mx-auto
+      flex
+      w-full
+      max-w-[1100px]
+      items-center
+      justify-center
+      gap-[clamp(10px,2.5vw,28px)]
+      whitespace-nowrap
+    "
+  >
+    <span
+      className="
+        font-serif
+        font-semibold
+        tracking-tight
+        text-[#fff5f8]
+        leading-none
+        text-[clamp(1.35rem,6.8vw,6rem)]
+      "
+    >
+      AnjRuddh
+    </span>
 
-          ANIRUDDH{" "}
+    <span
+      className="
+        shrink-0
+        font-serif
+        leading-none
+        text-[clamp(1.45rem,6vw,4.5rem)]
+        animate-[heartbeat_1.6s_ease-in-out_infinite]
+        text-pink-500
+        drop-shadow-[0_0_25px_rgba(236,72,153,0.4)]
+      "
+    >
+      ❤️
+    </span>
 
-          <span
-            className="
-              inline-block
-              animate-[heartbeat_1.6s_ease-in-out_infinite]
-              text-pink-500
-              drop-shadow-[0_0_25px_rgba(236,72,153,0.4)]
-            "
-          >
-            ❤️
-          </span>
-
-          {" "}ANJALI
-
-        </h1>
+    <span
+      className="
+        font-serif
+        font-semibold
+        tracking-tight
+        text-[#fff5f8]
+        leading-none
+        text-[clamp(1.35rem,6.8vw,6rem)]
+      "
+    >
+      AniJali
+    </span>
+  </div>
+</div>
 
 
 
@@ -460,10 +493,13 @@ function App() {
 
         <p
           className="
-            mt-7
+            mt-5
             max-w-2xl
+            px-2
             font-serif
-            text-lg
+            text-base
+            sm:mt-7
+            sm:text-xl
             leading-8
             text-[#c7b6c1]
             sm:text-xl
@@ -484,12 +520,16 @@ function App() {
 
         <div
           className="
-            mt-12
+            mt-10
             grid
-            grid-cols-3
+            w-full
+            max-w-3xl
+            grid-cols-2
             gap-3
-            sm:grid-cols-6
+            sm:mt-12
+            sm:grid-cols-3
             sm:gap-4
+            lg:grid-cols-6
           "
         >
 
@@ -534,8 +574,9 @@ function App() {
           className="
             group
             relative
-            mt-12
+            mt-10
             flex
+            max-w-full
             items-center
             gap-3
             overflow-hidden
@@ -547,8 +588,12 @@ function App() {
             via-[#e11d74]
             to-[#be185d]
             bg-[length:200%_100%]
-            px-8
-            py-4
+            px-6
+            py-3.5
+            text-sm
+            sm:px-8
+            sm:py-4
+            sm:text-base
             font-semibold
             text-white
             shadow-[0_12px_35px_rgba(219,39,119,0.28)]
@@ -597,7 +642,10 @@ function App() {
         <div
           className="
             absolute
-            bottom-7
+            bottom-4
+            hidden
+            sm:block
+            sm:bottom-7
             animate-bounce
             text-pink-500/40
           "
@@ -617,15 +665,17 @@ function App() {
           relative
           mx-auto
           max-w-6xl
-          px-6
-          pb-32
+          px-4
+          sm:px-6
+          pb-20
+          sm:pb-32
         "
       >
 
 
         {/* Heading */}
 
-        <div className="mb-20 text-center">
+        <div className="mb-12 sm:mb-16 md:mb-20 text-center">
 
           <p
             className="
@@ -645,8 +695,9 @@ function App() {
             className="
               mt-4
               font-serif
-              text-4xl
+              text-3xl
               font-semibold
+              leading-tight
               text-[#fff4f8]
               sm:text-5xl
               md:text-6xl
@@ -701,7 +752,7 @@ function App() {
           <div
             className="
               absolute
-              left-5
+              left-4
               top-0
               h-full
               w-px
@@ -745,8 +796,10 @@ function App() {
           relative
           border-t
           border-white/5
-          px-6
-          py-28
+          px-4
+          py-20
+          sm:px-6
+          sm:py-28
           text-center
         "
       >
@@ -768,7 +821,8 @@ function App() {
         <p
           className="
             relative
-            text-5xl
+            text-4xl
+            sm:text-5xl
             animate-[heartbeat_1.6s_ease-in-out_infinite]
             drop-shadow-[0_0_24px_rgba(236,72,153,0.3)]
           "
@@ -782,8 +836,9 @@ function App() {
             relative
             mt-6
             font-serif
-            text-4xl
+            text-3xl
             font-semibold
+            leading-tight
             text-[#fff5f8]
             sm:text-5xl
           "
@@ -1088,10 +1143,14 @@ function CounterBox({ value, label }) {
     <div
       className="
         glass
-        min-w-[82px]
-        rounded-2xl
-        px-3
-        py-4
+        w-full
+        min-w-0
+        rounded-xl
+        px-2
+        py-3
+        sm:rounded-2xl
+        sm:px-3
+        sm:py-4
         shadow-[0_12px_40px_rgba(0,0,0,0.25)]
         transition-all
         duration-300
@@ -1103,7 +1162,8 @@ function CounterBox({ value, label }) {
 
       <div
         className="
-          text-2xl
+          text-xl
+          sm:text-2xl
           font-semibold
           text-[#fff5f8]
         "
@@ -1117,9 +1177,11 @@ function CounterBox({ value, label }) {
       <div
         className="
           mt-1
-          text-[10px]
+          text-[9px]
+          sm:text-[10px]
           uppercase
-          tracking-widest
+          tracking-[0.12em]
+          sm:tracking-widest
           text-[#746671]
         "
       >
@@ -1166,7 +1228,7 @@ function JourneyCard({
       <div
         className="
           absolute
-          left-5
+          left-4
           z-10
           flex
           h-9
@@ -1192,7 +1254,7 @@ function JourneyCard({
 
       <button
         onClick={onClick}
-        className={`group ml-12 w-full text-left md:ml-0 md:w-[44%] ${
+        className={`group ml-10 min-w-0 w-[calc(100%-2.5rem)] text-left sm:ml-12 sm:w-[calc(100%-3rem)] md:ml-0 md:w-[44%] ${
           isRight
             ? "md:mr-8"
             : "md:ml-8"
@@ -1220,7 +1282,8 @@ function JourneyCard({
           <div
             className="
               relative
-              h-48
+              h-40
+              sm:h-48
               overflow-hidden
               bg-gradient-to-br
               from-[#240c23]
@@ -1332,7 +1395,7 @@ function JourneyCard({
 
           {/* ================= CONTENT ================= */}
 
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
 
 
             <div
@@ -1370,7 +1433,8 @@ function JourneyCard({
                   className="
                     mt-2
                     font-serif
-                    text-2xl
+                    text-xl
+                    sm:text-2xl
                     font-semibold
                     text-[#fff4f8]
                   "
@@ -1515,11 +1579,12 @@ function JourneyModal({
       <div
         className="
           relative
-          max-h-[90vh]
+          max-h-[94dvh]
           w-full
           max-w-2xl
           overflow-y-auto
-          rounded-3xl
+          rounded-2xl
+          sm:rounded-3xl
           border
           border-white/[0.07]
           bg-gradient-to-b
@@ -1539,8 +1604,10 @@ function JourneyModal({
           onClick={onClose}
           className="
             absolute
-            right-5
-            top-5
+            right-3
+            top-3
+            sm:right-5
+            sm:top-5
             z-10
             flex
             h-10
@@ -1572,7 +1639,7 @@ function JourneyModal({
         <div
           className="
             relative
-            h-64
+            h-48
             overflow-hidden
             bg-gradient-to-br
             from-[#240c23]
@@ -1632,7 +1699,8 @@ function JourneyModal({
 
             <span
               className="
-                text-8xl
+                text-6xl
+                sm:text-8xl
                 drop-shadow-[0_12px_30px_rgba(0,0,0,0.5)]
               "
             >
@@ -1649,7 +1717,7 @@ function JourneyModal({
 
         {/* ================= MODAL CONTENT ================= */}
 
-        <div className="p-7 sm:p-10">
+        <div className="p-5 sm:p-10">
 
 
           <p
@@ -1674,7 +1742,8 @@ function JourneyModal({
             className="
               mt-3
               font-serif
-              text-4xl
+              text-3xl
+              sm:text-4xl
               font-semibold
               text-[#fff4f8]
             "
@@ -1732,7 +1801,8 @@ function JourneyModal({
               border
               border-pink-500/10
               bg-pink-500/[0.045]
-              p-5
+              p-4
+              sm:p-5
             "
           >
 
@@ -1773,7 +1843,8 @@ function JourneyModal({
             <p
               className="
                 font-serif
-                text-lg
+                text-base
+                sm:text-lg
                 italic
                 leading-8
                 text-pink-200
