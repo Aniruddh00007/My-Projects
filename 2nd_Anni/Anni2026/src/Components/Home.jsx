@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-
+import { useNavigate } from "react-router-dom";
 
 const journey = [
   {
@@ -111,6 +111,7 @@ const journey = [
 
 
 function App() {
+  const navigate = useNavigate();
   const [selected, setSelected] = useState(null);
 
   const [timeTogether, setTimeTogether] = useState({
@@ -810,40 +811,31 @@ function App() {
         </p>
 
 
-        <button
-          onClick={() =>
-            document
-              .getElementById("journey")
-              .scrollIntoView({
-                behavior: "smooth",
-              })
-          }
-          className="
-            relative
-            mt-8
-            rounded-full
-            border
-            border-pink-500/25
-            bg-pink-500/[0.08]
-            px-8
-            py-4
-            font-semibold
-            text-pink-300
-            backdrop-blur-xl
-            transition-all
-            duration-300
-            hover:-translate-y-1
-            hover:border-pink-500/45
-            hover:bg-pink-500/[0.13]
-            hover:text-pink-200
-            hover:shadow-[0_10px_35px_rgba(236,72,153,0.12)]
-          "
-        >
-
-          Continue Our Story → 
-           
-
-        </button>
+       <button
+  onClick={() => navigate("/OpenWhen")}
+  className="
+    relative
+    mt-8
+    rounded-full
+    border
+    border-pink-500/25
+    bg-pink-500/[0.08]
+    px-8
+    py-4
+    font-semibold
+    text-pink-300
+    backdrop-blur-xl
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:border-pink-500/45
+    hover:bg-pink-500/[0.13]
+    hover:text-pink-200
+    hover:shadow-[0_10px_35px_rgba(236,72,153,0.12)]
+  "
+>
+  Explore Our Story →
+</button>
 
 
         <p

@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
+import { useNavigate } from "react-router-dom";
 
 /* =========================================================
    OPEN WHEN DATA
@@ -65,7 +66,9 @@ const openWhenLetters = [
    MAIN COMPONENT
 ========================================================= */
 
-function OpenWhen() {
+function OpenWhen() { 
+
+  const navigate = useNavigate();
   const [selectedLetter, setSelectedLetter] = useState(null);
   const [opening, setOpening] = useState(false);
   const [openedLetters, setOpenedLetters] = useState([]);
@@ -697,9 +700,7 @@ function OpenWhen() {
 
           <button
             type="button"
-            onClick={() => {
-              window.location.href = "/mini-games";
-            }}
+           onClick={()=> navigate("/mini-games")}
             className="
               group
               relative

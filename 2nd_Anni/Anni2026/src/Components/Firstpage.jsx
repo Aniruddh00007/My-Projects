@@ -1,6 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function FirstPage({ onContinue }) {
+
+function FirstPage({ onContinue }) {  
+  const navigate = useNavigate();
+
+  
+
   return (
     <div className="relative min-h-screen min-h-[100dvh] w-full overflow-hidden bg-gradient-to-br from-[#050208] via-[#0c0610] to-[#140717]">
 
@@ -353,9 +359,10 @@ function FirstPage({ onContinue }) {
         {/* ================= CTA ================= */}
 
         <div className="mt-8 sm:mt-10 text-center animate-[fadeUp_1.8s_ease]">
-
+    
+    
           <button
-            onClick={onContinue}
+            onClick={() => navigate("/login")}
             className="
               group
               relative

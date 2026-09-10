@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login({ onLogin }) {
+function Login() {
+  const navigate = useNavigate();
+
   const [answers, setAnswers] = useState({
     proposal: "",
     kiss: "",
@@ -93,9 +96,8 @@ function Login({ onLogin }) {
     if (allCorrect) {
       setError("");
 
-      if (onLogin) {
-        onLogin();
-      }
+      // Only when all 3 answers are correct
+      navigate("/home");
     } else {
       setError(
         "Hmm... one of your memories seems a little confused 😜 Try again!"
@@ -130,7 +132,6 @@ function Login({ onLogin }) {
         💖
       </span>
 
-
       {/* ================= HEADER ================= */}
 
       <section className="relative z-10 pt-16 sm:pt-24 pb-14 text-center">
@@ -140,32 +141,24 @@ function Login({ onLogin }) {
         </p>
 
         <h1 className="mt-4 font-serif text-4xl sm:text-5xl md:text-6xl text-[#fff2f7] leading-tight drop-shadow-[0_4px_24px_rgba(236,72,153,0.08)]">
-
           Do You Remember
-
           <br />
-
           <span className="text-pink-500">
             Our Story?
           </span>
-
         </h1>
 
         <div className="mx-auto mt-5 w-16 h-[2px] bg-gradient-to-r from-transparent via-pink-500/70 to-transparent" />
 
         <p className="max-w-xl mx-auto mt-6 px-5 text-sm sm:text-base leading-7 text-[#a797a3]">
-
           Before you enter our little world, let’s see how well you remember the
           moments that made{" "}
-
           <span className="text-pink-500 font-semibold">
             us.
           </span>
-
         </p>
 
       </section>
-
 
       {/* ================= TIMELINE ================= */}
 
@@ -188,7 +181,6 @@ function Login({ onLogin }) {
             -translate-x-1/2
           "
         />
-
 
         <div className="space-y-24 md:space-y-32">
 
@@ -224,13 +216,10 @@ function Login({ onLogin }) {
                     backdrop-blur-xl
                   "
                 >
-
                   {index === 0 && "💍"}
                   {index === 1 && "💋"}
                   {index === 2 && "🫂"}
-
                 </div>
-
 
                 {/* ================= ROW ================= */}
 
@@ -310,12 +299,13 @@ function Login({ onLogin }) {
 
                   </div>
 
-
                   {/* CONTENT */}
 
                   <div
                     className={`
-                      ${isEven ? "md:order-1 md:text-right" : "md:order-2 md:text-left"}
+                      ${isEven
+                        ? "md:order-1 md:text-right"
+                        : "md:order-2 md:text-left"}
                     `}
                   >
 
@@ -340,7 +330,6 @@ function Login({ onLogin }) {
                       {item.date}
                     </span>
 
-
                     {/* Title */}
 
                     <h2
@@ -355,7 +344,6 @@ function Login({ onLogin }) {
                     >
                       {item.title}
                     </h2>
-
 
                     {/* Question */}
 
@@ -372,7 +360,6 @@ function Login({ onLogin }) {
                       {item.question}
                     </p>
 
-
                     {/* Description */}
 
                     <p
@@ -387,7 +374,6 @@ function Login({ onLogin }) {
                     >
                       {item.description}
                     </p>
-
 
                     {/* ANSWERS */}
 
@@ -437,9 +423,7 @@ function Login({ onLogin }) {
                               }
                             `}
                           >
-
                             {option}
-
                           </button>
 
                         );
@@ -458,7 +442,6 @@ function Login({ onLogin }) {
 
         </div>
 
-
         {/* ================= FINAL ENTRY ================= */}
 
         <div className="mt-24 md:mt-32 text-center">
@@ -466,7 +449,6 @@ function Login({ onLogin }) {
           <div className="mx-auto w-16 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent" />
 
           <p className="mt-7 text-sm text-[#9d8e99]">
-
             Three memories.
 
             <span className="mx-2 text-pink-500">
@@ -480,26 +462,20 @@ function Login({ onLogin }) {
             </span>
 
             One story.
-
           </p>
-
 
           {/* Error */}
 
           {error && (
-
             <p className="mt-6 text-sm font-semibold text-pink-400 drop-shadow-[0_0_8px_rgba(236,72,153,0.2)]">
-
               {error}
-
             </p>
-
           )}
-
 
           {/* Button */}
 
           <button
+            type="button"
             onClick={handleSubmit}
             className="
               group
@@ -508,7 +484,7 @@ function Login({ onLogin }) {
               mt-8
               px-9
               sm:px-14
-              py-4.5
+              py-4
               rounded-full
               bg-gradient-to-r
               from-[#db2777]
@@ -547,28 +523,22 @@ function Login({ onLogin }) {
             />
 
             <span className="relative">
-
               Enter Our World
 
               <span className="ml-3">
                 ❤️
               </span>
-
             </span>
 
           </button>
 
-
           <p className="mt-4 text-xs text-[#756772]">
-
             Only if you remember us correctly...
-
           </p>
 
         </div>
 
       </section>
-
 
       {/* ================= ANIMATIONS ================= */}
 
@@ -586,7 +556,6 @@ function Login({ onLogin }) {
             }
 
           }
-
 
           @keyframes floatHeartReverse {
 

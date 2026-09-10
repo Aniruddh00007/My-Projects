@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const roomSections = [
   {
@@ -168,6 +169,7 @@ const roomSections = [
 ];
 
 export default function MemoryRoom() {
+  const navigate = useNavigate();
   const [activeWall, setActiveWall] = useState(0);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [direction, setDirection] = useState("right");
@@ -659,9 +661,7 @@ export default function MemoryRoom() {
         {activeWall === roomSections.length - 1 && (
   <div className="mt-8 flex justify-end">
     <button
-      onClick={() => {
-        window.location.href = "/secret";
-      }}
+      onClick={()=> navigate("/envelop")}
       className="group flex items-center gap-3 rounded-full border border-pink-400/30 bg-pink-500/10 px-6 py-3 text-sm font-medium text-pink-100 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:border-pink-400/60 hover:bg-pink-500/20 hover:shadow-[0_0_30px_rgba(244,63,94,.25)] active:scale-95"
     >
       <span>Something Special</span>

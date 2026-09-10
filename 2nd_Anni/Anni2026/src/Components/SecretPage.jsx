@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function SecretPage() {
+export default function SecretPage() { 
+  const navigate = useNavigate();
   const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
@@ -181,9 +183,7 @@ export default function SecretPage() {
 
         {revealed && (
           <button
-            onClick={() => {
-              window.location.href = "##";
-            }}
+            onClick={() => navigate("/final")}
             className="group fixed bottom-8 right-8 z-50 flex flex-col items-center outline-none"
             title="Continue Our Story"
           >

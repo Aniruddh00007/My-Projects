@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function LoveLetter() {
+export default function LoveLetter() { 
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [showLetter, setShowLetter] = useState(false);
 
@@ -583,9 +585,7 @@ export default function LoveLetter() {
 
           {showLetter && (
             <button
-              onClick={() => {
-                window.location.href = "/secret";
-              }}
+              onClick={() => navigate("/secret")}
               className="
                 pointer-events-auto
                 fixed bottom-7 right-7 z-[120]

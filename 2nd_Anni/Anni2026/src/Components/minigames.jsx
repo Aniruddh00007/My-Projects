@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /* =========================================================
    QUIZ DATA
@@ -147,6 +148,7 @@ const quizQuestions = [
 ========================================================= */
 
 function MiniGames() {
+   const navigate = useNavigate();
   const [gameStarted, setGameStarted] = useState(false);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -1559,9 +1561,7 @@ function MiniGames() {
 
               <button
                 type="button"
-                onClick={() => {
-                  window.location.href = "/MemoryRoom";
-                }}
+                onClick={()=> navigate("/memory-room")}
                 className="
                   inline-flex
                   items-center
