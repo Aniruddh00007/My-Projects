@@ -1,11 +1,27 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import { useMusic } from "./MusicContext";
 
-function FirstPage({ onContinue }) {  
+function FirstPage() {
   const navigate = useNavigate();
+  const { playMusic } = useMusic();
 
-  
+  // =====================================================
+  // START MUSIC + GO TO LOGIN
+  // =====================================================
+
+  const handleContinue = async () => {
+    try {
+      // User clicked the button, so browser allows audio here
+      await playMusic();
+    } catch (error) {
+      console.error("Music start error:", error);
+    }
+
+    // Open login after starting music
+    navigate("/login");
+  };
 
   return (
     <div className="relative min-h-screen min-h-[100dvh] w-full overflow-hidden bg-gradient-to-br from-[#050208] via-[#0c0610] to-[#140717]">
@@ -60,7 +76,6 @@ function FirstPage({ onContinue }) {
 
       <span className="absolute bottom-[30%] left-[28%] w-1 h-1 rounded-full bg-rose-400/50 shadow-[0_0_10px_rgba(251,113,133,0.8)]" />
 
-
       {/* ================= MAIN CONTENT ================= */}
 
       <main className="relative z-10 min-h-screen min-h-[100dvh] flex flex-col items-center justify-center px-5 py-10">
@@ -78,7 +93,6 @@ function FirstPage({ onContinue }) {
           <div className="h-px w-10 sm:w-16 bg-gradient-to-l from-transparent to-pink-500/70" />
 
         </div>
-
 
         {/* ================= HEART ================= */}
 
@@ -104,7 +118,6 @@ function FirstPage({ onContinue }) {
           </div>
 
         </div>
-
 
         {/* ================= ANNIVERSARY TITLE ================= */}
 
@@ -148,7 +161,6 @@ function FirstPage({ onContinue }) {
 
         </div>
 
-
         {/* ================= MESSAGE ================= */}
 
         <div className="text-center max-w-2xl mt-7 sm:mt-9 animate-[fadeUp_1.2s_ease]">
@@ -171,7 +183,6 @@ function FirstPage({ onContinue }) {
           </p>
 
         </div>
-
 
         {/* ================= CHALLENGE ================= */}
 
@@ -208,7 +219,6 @@ function FirstPage({ onContinue }) {
           </p>
 
         </div>
-
 
         {/* ================= MEMORY PREVIEW ================= */}
 
@@ -263,11 +273,9 @@ function FirstPage({ onContinue }) {
 
           </div>
 
-
           {/* Line */}
 
           <div className="w-7 sm:w-12 h-px bg-gradient-to-r from-pink-500/30 via-pink-500/70 to-pink-500/30" />
-
 
           {/* Memory 2 */}
 
@@ -308,11 +316,9 @@ function FirstPage({ onContinue }) {
 
           </div>
 
-
           {/* Line */}
 
           <div className="w-7 sm:w-12 h-px bg-gradient-to-r from-pink-500/30 via-pink-500/70 to-pink-500/30" />
-
 
           {/* Memory 3 */}
 
@@ -355,14 +361,13 @@ function FirstPage({ onContinue }) {
 
         </div>
 
-
         {/* ================= CTA ================= */}
 
         <div className="mt-8 sm:mt-10 text-center animate-[fadeUp_1.8s_ease]">
-    
-    
+
           <button
-            onClick={() => navigate("/login")}
+            type="button"
+            onClick={handleContinue}
             className="
               group
               relative
@@ -428,7 +433,6 @@ function FirstPage({ onContinue }) {
 
         </div>
 
-
         {/* ================= BOTTOM ================= */}
 
         <div className="absolute bottom-5 left-0 right-0 text-center">
@@ -440,7 +444,6 @@ function FirstPage({ onContinue }) {
         </div>
 
       </main>
-
 
       {/* ================= ANIMATIONS ================= */}
 
