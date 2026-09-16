@@ -9,7 +9,7 @@ const journey = [
     title: "Day 1",
     subtitle: "The Beginning",
     date: "00-09-2024 ",
-    location: "Hmare Class ke bhar -> fr lab 8 tak  ",
+    location: "Hmare Class ke bhar mile thee ham ➡️ fr lab 8 tak  saath gye ",
     color: "from-pink-500 to-rose-500",
     message: "This was the day hmari story start hui thiii  thori introduction se, shukr mnao ki maine Rewari suna thaa nhi to ye story create hi nhi hoti 😂😂",
     details:
@@ -47,12 +47,12 @@ const journey = [
     icon: "🌹",
     title: "First Romance",
     subtitle: "A Day To Remember",
-    date: "DD Month YYYY",
-    location: "Date Location",
+    date: "13-11-2024",
+    location: "Hmara Classroom ...., last bench",
     color: "from-red-500 to-pink-500",
     message: "A simple day that became one of my favorite memories.",
     details:
-      "Write everything you remember about your first date here.",
+      " Shayad tumhe yaad ho, hum apne official relationship ke bilkul initial phase mein the. Us din hum class mein aa gaye the, lekin  wahan aur koi nahi aaya tha, kyunki sab post-Diwali celebration aur  stalls ki preparations mein busy the Hum bhi bas class se nikalne hi wale the, tab maine tumhe   approach kiya… 🙈❤️ Aur phir hum last bench par gaye, jahan   humne apni first kiss ki. 💋   Aur uske baad tumhara reaction… woh main shayad kabhi nahi bhool sakta. 🙈 Tum ekdum out of the world si ho gayi thi—  tumhari aankhein band thi, tum long breaths le rahi thi, aur kuch der ke liye aisa lag raha tha jaise tum completely usi moment mein kho gayi ho. ❤️  Woh moment thoda nervous, thoda unexpected, lekin hum dono ke liye bahut hi special tha. 🫶🏻   ",
     photo: "/photos/temp.jpg",
   },
   {
@@ -78,7 +78,7 @@ const journey = [
     color: "from-cyan-400 to-blue-500",
     message: "Some places become special because of the person beside you.",
     details:
-      "first trip thaa  hmara kitne mushkil se tmhe convence karna padha fr jaa kr jhuti shadi karwaai nakli papa bnaana para ... tab jaa kar college se nikal paayi tm fr cab se mall short time mai acchi memories create kari 1st or best moment thaa hmara or metro station mai good bei kiss public mai .....sb kuchh tmhare saare efforts, love, care sb bhut jyada precious hai mere liyee .",
+      "first trip thaa  hmara kitne mushkil se tmhe convence kara thaa maine, fr jaa kr jhuti shadi karwaai ,nakli papa bnaana para ... ,tab jaa kar college se nikal paayi tm ,fr cab se mall gye, short time mai acchi memories create kari jaan hmne, 1st or best moment thaa hmara or metro station mai good bei kiss public mai .....sb kuchh ,tmhare saare efforts, love, care sb bhut jyada precious hai mere liyee jaan .",
     photo: "/photos/temp.jpg",
   },
   {
@@ -91,7 +91,7 @@ const journey = [
     color: "from-yellow-400 to-pink-500",
     message: "One year. Countless memories. And so much more to come.",
     details:
-      "1st Anniversary  thaa special jo digitally possible hua wo kara maine   or is time bhi shyd mil naa hi paa rhe honge to digitally efforts hi daal skta hu filhaal to so happy Anniversary to us ❤️ ....Love you so muchhhhhh  ❤️",
+      "1st Anniversary  thaa hmara , special to kuchh nhi but  jo digitally possible hua wo kara maine,   or is time bhi shyd mil naa hi paa rhe honge to digitally efforts hi daal skta hu filhaal to so happy Anniversary to us ❤️ ....Love you so muchhhhhh my LOVE ❤️",
     photo: "/photos/temp.jpg",
   },
   {
@@ -235,7 +235,7 @@ function App() {
 
   return (
 
-    <div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#050208] via-[#0b0510] to-[#120617] text-white">
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#050208] via-[#0b0510] to-[#120617] text-white font-['Poppins']">
 
 
       {/* ================= BACKGROUND ================= */}
@@ -422,9 +422,9 @@ function App() {
   >
     <span
       className="
-        font-serif
-        font-semibold
-        tracking-tight
+        font-['Great_Vibes']
+        font-normal
+        tracking-normal
         text-[#fff5f8]
         leading-none
         text-[clamp(1.35rem,6.8vw,6rem)]
@@ -449,9 +449,9 @@ function App() {
 
     <span
       className="
-        font-serif
-        font-semibold
-        tracking-tight
+        font-['Great_Vibes']
+        font-normal
+        tracking-normal
         text-[#fff5f8]
         leading-none
         text-[clamp(1.35rem,6.8vw,6rem)]
@@ -496,7 +496,8 @@ function App() {
             mt-5
             max-w-2xl
             px-2
-            font-serif
+            font-['Cormorant_Garamond']
+            italic
             text-base
             sm:mt-7
             sm:text-xl
@@ -694,8 +695,8 @@ function App() {
           <h2
             className="
               mt-4
-              font-serif
-              text-3xl
+              font-['Great_Vibes']
+              text-4xl
               font-semibold
               leading-tight
               text-[#fff4f8]
@@ -726,9 +727,11 @@ function App() {
               mx-auto
               mt-6
               max-w-2xl
-              text-sm
-              sm:text-base
-              leading-7
+              font-['Cormorant_Garamond']
+              italic
+              text-lg
+              sm:text-xl
+              leading-8
               text-[#978894]
             "
           >
@@ -835,8 +838,8 @@ function App() {
           className="
             relative
             mt-6
-            font-serif
-            text-3xl
+            font-['Great_Vibes']
+            text-4xl
             font-semibold
             leading-tight
             text-[#fff5f8]
@@ -901,7 +904,7 @@ function App() {
           "
         >
 
-          Made with ❤️ for Aniruddh & Anjali
+          Made with ❤️ for My Anjali
 
         </p>
 
@@ -1432,7 +1435,7 @@ function JourneyCard({
                 <h3
                   className="
                     mt-2
-                    font-serif
+                    font-['Playfair_Display']
                     text-xl
                     sm:text-2xl
                     font-semibold
@@ -1448,7 +1451,9 @@ function JourneyCard({
                 <p
                   className="
                     mt-1
-                    text-sm
+                    font-['Cormorant_Garamond']
+                    italic
+                    text-base
                     text-[#82737f]
                   "
                 >
@@ -1497,9 +1502,10 @@ function JourneyCard({
             <p
               className="
                 mt-4
-                text-sm
+                font-['Cormorant_Garamond']
+                text-base
                 italic
-                leading-6
+                leading-7
                 text-[#cabcc5]
               "
             >
@@ -1741,8 +1747,8 @@ function JourneyModal({
           <h2
             className="
               mt-3
-              font-serif
-              text-3xl
+              font-['Great_Vibes']
+              text-4xl
               sm:text-4xl
               font-semibold
               text-[#fff4f8]
@@ -1757,6 +1763,9 @@ function JourneyModal({
           <p
             className="
               mt-2
+              font-['Cormorant_Garamond']
+              italic
+              text-lg
               text-[#82737f]
             "
           >
@@ -1808,8 +1817,10 @@ function JourneyModal({
 
             <p
               className="
-                text-sm
-                leading-7
+                font-['Cormorant_Garamond']
+                text-base
+                sm:text-lg
+                leading-8
                 text-[#c9bbc4]
               "
             >
@@ -1842,7 +1853,7 @@ function JourneyModal({
 
             <p
               className="
-                font-serif
+                font-['Cormorant_Garamond']
                 text-base
                 sm:text-lg
                 italic
