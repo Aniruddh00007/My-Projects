@@ -43,27 +43,27 @@ const roomSections = [
     photos: [
       {
         id: 4,
-        src: "/photos/temp.jpg",
-        title: "Our Adventure",
-        date: "Together Somewhere",
+        src: "/photos/Trips2.png",
+        title: "Our Crazy Little Adventure",
+        date: "A DAY FULL OF SPLASHES 💦",
         message:
-          "The destination mattered less than the fact that we were experiencing it together.",
+          "We got soaked, laughed like kids, and forgot about everything else. It wasn't just a day at the water park — it became one of those memories we'll always smile about.",
       },
       {
         id: 5,
-        src: "/photos/temp.jpg",
-        title: "Miles & Memories",
-        date: "Our Trip",
+        src: "/photos/Trip3.png",
+        title: "Bunked Class, Chose Us ❤️",
+        date: "A LITTLE ESCAPE",
         message:
-          "Every road felt shorter when you were beside me.",
+          "We skipped college just to steal a few hours for ourselves. No lectures, no plans — just us, wandering around the mall and making an ordinary day unforgettable.",
       },
       {
         id: 6,
-        src: "/photos/temp.jpg",
-        title: "Us Against The World",
-        date: "Another Adventure",
+        src: "/photos/Trips1.png",
+        title: "I’d Find You Through Any Fog ❤️",
+        date: "WORTH EVERY MILE",
         message:
-          "Just two people collecting places, laughs and stories to remember forever.",
+          "I woke up at 5 AM, travelled all that way through the freezing cold and a fog so thick I could barely see ahead — just to see you. And the moment I finally did, every mile felt worth it.",
       },
     ],
   },
@@ -76,7 +76,7 @@ const roomSections = [
     photos: [
       {
         id: 7,
-        src: "/photos/temp.jpg",
+        src: "/photos/mmnt1.png",
         title: "A Moment To Keep",
         date: "Special Day",
         message:
@@ -84,19 +84,19 @@ const roomSections = [
       },
       {
         id: 8,
-        src: "/photos/temp.jpg",
-        title: "Just You & Me",
-        date: "One Of Our Days",
+        src: "/photos/mmnt2.png",
+        title: "A KISS BETWEEN THE CLASSES",
+        date: "OUR COLLEGE MEMORY ❤️",
         message:
-          "Nothing extraordinary was needed. Having you there was enough.",
+          "Who knew an ordinary classroom could become the place of such an unforgettable memory? One little kiss turned a normal college day into a moment we’ll smile about forever.",
       },
       {
         id: 9,
-        src: "/photos/temp.jpg",
-        title: "Forever Favourite",
-        date: "One Beautiful Memory",
+        src: "/photos/mmnt3.png",
+        title: "THE DAY WE BECAME ONE",
+        date: "just You and me",
         message:
-          "If I could return to one small moment just to feel it again, maybe this would be one of them.",
+          "That day, we weren’t just close — we trusted each other completely. It was the first time we shared ourselves in such a deeply intimate way, turning love, trust, and countless emotions into one unforgettable memory.",
       },
     ],
   },
@@ -142,15 +142,15 @@ const roomSections = [
     photos: [
       {
         id: 13,
-        src: "/photos/temp.jpg",
-        title: "My Favourite Person",
-        date: "Us",
+        src: "/photos/Us1.png",
+        title: "After 6 Months & 15 Days ❤️",
+        date: "FINALLY, US AGAIN",
         message:
-          "Of all the people I could have met in this world, somehow I found you.",
+          "After 6 months and 15 days of waiting, missing you, and counting the days, I finally got to hold you this close again. That function became special for just one reason — you were finally there with me.",
       },
       {
         id: 14,
-        src: "/photos/temp.jpg",
+        src: "/photos/us2.png",
         title: "Our Story",
         date: "Still Us",
         message:
@@ -158,7 +158,7 @@ const roomSections = [
       },
       {
         id: 15,
-        src: "/photos/temp.jpg",
+        src: "/photos/us3.png",
         title: "To Be Continued...",
         date: "Today & Tomorrow",
         message:
