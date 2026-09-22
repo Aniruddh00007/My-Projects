@@ -10,27 +10,27 @@ const roomSections = [
     photos: [
       {
         id: 1,
-        src: "/photos/temp.jpg",
-        title: "The Beginning",
-        date: "Our First Memory",
+        src: "/photos/mem1.jpg",
+        title: "The Message That Changed Us ❤️",
+        date: "THE FIRST CONFESSION",
         message:
-          "Some moments don't look special when they happen, but later they become the beginning of everything.",
+          "That day, you didn’t just send me a message — you gave me a little piece of your heart. Somewhere between your nervous words, your hidden feelings, and that tiny ❤️, something beautiful began between us. I didn’t know then how precious you would become to me… I only knew that after reading those words, nothing between us felt quite the same again...............You confessed your feelings in a few words… and unknowingly gave me a love story I’d want to live forever.” ❤️🥹",
       },
       {
         id: 2,
-        src: "/photos/temp.jpg",
-        title: "First Time Together",
-        date: "A Beautiful Beginning",
+        src: "/photos/mem2.jpg",
+        title: "The First Frame of Us ❤️",
+        date: "OUR VERY FIRST PICTURE",
         message:
-          "Before we knew what our story would become, we were already creating memories.",
+          "Back then, it was just our first picture together. We had no idea how many memories, smiles, fights, hugs, kisses, and beautiful moments would follow. Looking at it now, it feels like this little frame was quietly capturing the beginning of something that would become so special to us.",
       },
       {
         id: 3,
-        src: "/photos/temp.jpg",
-        title: "That Smile",
-        date: "The Early Days",
+        src: "/photos/1stpic.jpg",
+        title: "I Knew There Was More ❤️",
+        date: "THE FIRST LITTLE HINT",
         message:
-          "Maybe it was just another normal day for everyone else, but for us it became something worth remembering.",
+          "That day, you casually told me, “I like you as a good human being.” Maybe you were trying to keep your feelings hidden behind those simple words… but somehow, I could already sense there was a little more in your heart. I didn’t know the whole story yet — but I had started understanding the hint. ❤️    “You called me a good human being… but my heart quietly heard something more.” 🥹❤️",
       },
     ],
   },
@@ -77,14 +77,14 @@ const roomSections = [
       {
         id: 7,
         src: "/photos/mmnt1.png",
-        title: "A Moment To Keep",
-        date: "Special Day",
+        title: "MY FAVOURITE PLACE",
+        date: "OUR MEMORY",
         message:
-          "Some memories stay alive because of how deeply we felt them.",
+          "Some moments don’t need anything special — just you beside me, a little closeness, and the kind of peace that makes me wish time could stop right there.",
       },
       {
         id: 8,
-        src: "/photos/mmnt2.png",
+        src: "/photos/mmt2.png",
         title: "A KISS BETWEEN THE CLASSES",
         date: "OUR COLLEGE MEMORY ❤️",
         message:
@@ -109,27 +109,27 @@ const roomSections = [
     photos: [
       {
         id: 10,
-        src: "/photos/temp.jpg",
-        title: "No Explanation 😂",
-        date: "Crazy Us",
+        src: "/photos/crazy1.png",
+        title: "Smiling Through It All ❤️",
+        date: "THE LAST DAY OF OUR FIRST YEAR",
         message:
-          "Some photos need beautiful captions. This one probably needs an explanation instead.",
+          "It was the last day of our first year, and we knew things were about to change. Distance was waiting for us, and life wasn’t exactly giving us many reasons to smile. But somehow, even in the middle of everything, we found our little moments of happiness together.",
       },
       {
         id: 11,
-        src: "/photos/temp.jpg",
-        title: "Certified Pagal",
-        date: "Another Random Day",
+        src: "/photos/crazy2.png",
+        title: "How Was I Supposed To Look Away? ❤️",
+        date: "CULTURE FEST",
         message:
-          "One thing we definitely know how to do together is make normal moments completely unforgettable.",
+          "It was Culture Fest, but for me, she was the whole event. Madam got all dressed up just for me, looking way too beautiful — and honestly, my eyes simply refused to look anywhere else........... “Everyone was enjoying the fest… and I was just busy admiring you.” 🫠❤️",
       },
       {
         id: 12,
-        src: "/photos/temp.jpg",
-        title: "Our Chaos",
-        date: "Just Us Being Us",
+        src: "/photos/crazy3.png",
+        title: "And Somehow, We Smiled ❤️",
+        date: "FIGHT • TEARS • THEN US",
         message:
-          "Maybe we're a little crazy, but at least we're crazy together.",
+          "It was Fest Day — Madam fought with me first, then ended up crying herself… and somehow, after all that drama, she was right here in my arms, smiling like nothing had happened. That’s just us — a little fight, a few tears, and somehow always finding our way back to each other........ “No matter how the moment begins, somehow it always ends with us.” ❤️🥹",
       },
     ],
   },

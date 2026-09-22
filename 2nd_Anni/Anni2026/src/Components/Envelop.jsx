@@ -496,31 +496,57 @@ export default function LoveLetter() {
                 >
 
                   <p>
-                    I don't know if words will ever be enough to explain
-                    what you mean to me, but today I wanted to leave a
-                    little piece of my heart here for you.
+                    Jaan, I love you bhut bhut zyada… ❤️
+                    Main ye sab English mein bhi likh sakta tha,
+                     but shayad phir tum meri feelings ko utni gehrai se na samajh paati.
+                      Main bas itna chahta hoon ki tum samjho ki maine tumse kitni shiddat
+                       se mohabbat ki hai. Tum meri life ka sirf ek beautiful part nahi ho, 
+                       tum wo insaan ho jiske saath maine apni poori zindagi imagine ki hai.
                   </p>
 
                   <p>
-                    Somewhere between our first conversations, our
-                    random moments, our fights, our laughter and all
-                    those memories we never planned, you became such an
-                    important part of my life.
+                    Maine tumse sirf pyaar nahi kiya, maine tumhare saath sapne sajaye hain
+                     — ek saath rehne ke, ek dusre ka haath pakad kar life ke har phase se
+                      guzrne ke, ek chhota sa apna jahaan banane ke, aur ek din peeche 
+                      mudkar ye kehne ke ki “dekho, jo sapne kabhi hum chupke se dekha karte
+                       the, aaj hum unhe jee rahe hain.” ❤️
                   </p>
 
                   <p>
-                    We've had beautiful days, difficult days, crazy
-                    moments and moments I wish I could live all over
-                    again. And somehow, every single one of them became
-                    a part of <span className="font-semibold">our story.</span>
+                    Aur haan, agar ye journey aise hi khoobsurat rahi na, 
+                    toh iss janam ke baad agle 7 janmon ka reservation bhi tumhare naam hi
+                     karwaunga. 😂❤️ Kyunki ek zindagi shayad tumhare saath jeene, 
+                     tumhe pyaar karne aur tumhare saath memories banane ke liye mere liye
+                      enough hi nahi hogi. <span className="font-semibold">Dekhlo madam Itna pyaar hai.</span>
                   </p>
 
                   <p>
-                    I don't want a perfect story with you. I just want
-                    something real — where we keep understanding each
-                    other, choosing each other and creating memories
-                    that someday we'll look back at and smile.
+                    Aur hamara jo secret hai, hamara jo plan hai,
+                     hum usi ke according chalenge. Jaldbazi mein nahi,
+                      samajhdari aur patience ke saath… taaki jo sapne humne itne pyaar se sajaye hain, 
+                      wo sirf sapne bankar na reh jaayein. Main chahta hoon wo sach hon — aur jab sach hon, 
+                    toh unmein tum bhi ho aur main bhi.
                   </p>
+                   <p>
+                    Life hamesha perfect nahi hogi. Kabhi hum ladenge,
+                     kabhi naraz honge, kabhi situations hamare favour mein nahi hongi.
+                      But meri ek wish hamesha rahegi — chahe problem kisi bhi side ho, 
+                      end mein hum dono ek hi side rahen. Tum vs main kabhi na ho… 
+                    hamesha hum dono vs problem ho. ❤️
+                   </p> 
+                   <p>
+                    Tumhare saath jo bhi chhote-bade moments mile hain na,
+                     unmein se kuch duniya ke liye bilkul ordinary honge, 
+                     but mere liye wo meri life ke sabse precious pages hain.
+                      Aur main chahta hoon ki aage bhi meri life ke har naye chapter
+                       mein tumhara naam ho.
+                   </p> 
+                   <p>
+                    I love you, meri Patni Ji. ❤️
+                     Aaj bhi, kal bhi, aur jitne kal humein saath milenge un sab mein. 
+                     Aur agar sach mein 7 janam hote hain… toh madam, 
+                     har baar mujhe tum hi chahiye. 🥹❤️
+                   </p>
 
                   <p>
                     Thank you for being part of my life, for all the
