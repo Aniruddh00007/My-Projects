@@ -11,7 +11,7 @@ const journey = [
     icon: "",
     title: "Day 1",
     subtitle: "The Beginning",
-    date: "00-09-2024 ",
+    date: "25-10-2024 ",
     location:
       "ye pic jaan tmhare Bus mai click kara thaa hmne  ",
     color: "from-pink-500 to-rose-500",
@@ -49,7 +49,7 @@ const journey = [
     message:
       "  The first time we stood together in the same place. My hand was around your waist, and your hand was resting on my shoulder while we were rehearsing.",
     details:
-      "Rehersal ke time mai tmne mujhe apne shoulder pe haath rakha thaa or mai tmhare waist pe   sbse best perform kar rhe thee ham jha puri class hesitate kar rhi thi ek dusre ka haath pakarne mai 😂😂  best performance  thaa jaan wo or mai bhi itna comfort feel kar rha thaa like tm meri hi ho uss time se hi .",
+      "Rehersal ke time mai tmne mere shoulder pe haath rakha thaa or mai tmhare waist pe   sbse best perform kar rhe thee ham jha puri class hesitate kar rhi thi ek dusre ka haath pakarne mai 😂😂  best performance  thaa jaan wo or mai bhi itna comfort feel kar rha thaa like tm meri hi ho uss time se hi .",
     photo: "/photos/1st meet.png",
   },
 
