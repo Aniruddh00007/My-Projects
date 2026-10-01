@@ -20,6 +20,7 @@ import Final from "./Components/Final";
 // 🎵 MUSIC
 import MusicPlayer from "./Components/MusicPlayer";
 import { MusicProvider } from "./Components/MusicContext";
+import CustomCursor from "./Components/CustomCursor";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
 
       {/* Scroll page to top after route change */}
       <ScrollToTop />
+
+      <CustomCursor />
 
       {/* 🎵 Global Music Player */}
       <MusicPlayer />
